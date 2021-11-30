@@ -1,0 +1,184 @@
+.main-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 150px;
+  background-color: #525151;
+  background-image: url("../../../media/img/titles/about.jpeg");
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 1rem;
+}
+
+.main-title h1 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 1px 1px 6px #575757;
+}
+
+.about-separator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  flex-direction: column;
+}
+
+.about-separator .first-rect {
+  min-width: 35%;
+  position: relative;
+  border: 0;
+  z-index: 0;
+}
+
+.about-separator .first-rect img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 0;
+}
+
+.about-separator .second-rect {
+  padding: 1.2rem 1.5rem;
+  gap: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 1rem;
+}
+
+.about-separator .second-rect h1 {
+  font-size: 1rem;
+}
+
+.about-separator .second-rect h4 {
+  width: 90% !important;
+}
+
+.about-page-sep {
+  margin-top: 0 !important;
+}
+
+.personal h4 {
+  width: 55% !important;
+}
+
+.personal .first-rect {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  background-image: url("../../../media/img/about-page/personal.jpeg") !important;
+}
+
+.personal .second-rect {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.personal .mentions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.personal .mentions img {
+  border: none;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+}
+
+.personal .mentions img:hover {
+  -webkit-animation: heartBeat 1s ease;
+          animation: heartBeat 1s ease;
+}
+
+.personal .mentions h5 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+  .main-title {
+    background-image: url("../../../media/img/titles/about-lg.jpeg");
+    background-position: 10% 40% !important;
+    padding: 2rem;
+  }
+  .main-title h1 {
+    font-size: 4vw !important;
+  }
+  .about-separator {
+    padding: 1rem;
+  }
+  .about-separator .first-rect {
+    -webkit-filter: drop-shadow(-2px 6px 5px #464545);
+            filter: drop-shadow(-2px 6px 5px #464545);
+  }
+  .personal .first-rect {
+    overflow: hidden;
+    border-radius: 1rem 0 0 1rem !important;
+    -webkit-filter: drop-shadow(0px 6px 5px #464545);
+            filter: drop-shadow(0px 6px 5px #464545);
+  }
+  .personal .first-rect img {
+    border-radius: 0 !important;
+  }
+  .personal .first-rect {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .personal .second-rect {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about-separator {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .about-separator .first-rect {
+    min-height: 35rem;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=about-page.css.map */

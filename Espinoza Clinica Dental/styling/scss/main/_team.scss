@@ -1,0 +1,305 @@
+@import '../variables';
+
+.team-preview {
+    @include display (flex, initial, center, column);
+    @include measure();
+    gap    : $--md-gap;
+    padding: $--md-gap $--lwMd-gap;
+
+    .main-half {
+        @include display (flex, initial, center, column);
+        @include measure();
+        gap       : $--lw-gap;
+        text-align: center;
+
+        .first-rect {
+            @include display (flex, initial, start, column);
+            @include measure();
+            gap: $--lw-gap;
+
+            h4 {
+                width         : 60%;
+                padding-bottom: 0;
+                margin        : auto;
+
+                &::after {
+                    @include measure(2px, 100%);
+                    @include position(absolute, left, bottom, 0%, -10%);
+                    background-color: $-red;
+                    content         : '';
+                }
+            }
+
+            h1 {
+                color      : $--dark-blue;
+                text-shadow: none;
+                margin     : auto;
+            }
+        }
+
+        .second-rect {
+            img {
+                align-self: center;
+                @include measure();
+                object-fit: cover;
+            }
+        }
+    }
+
+    .second-half {
+        @include display(flex, center, center, column);
+        @include measure(auto);
+        gap: $--md-gap;
+
+        .inner-title {
+            @include display(flex, center, center, column);
+            gap: $--lw-gap;
+
+            h2 {
+                margin  : auto;
+                position: relative;
+
+                &::after {
+                    @include measure(2px, 100%);
+                    @include position(absolute, left, bottom, 0%, -10%);
+                    background-color: $-red;
+                    content         : '';
+                }
+            }
+
+            h1 {
+                color   : $--dark-blue;
+                position: relative;
+            }
+
+        }
+
+        .card-wrapper {
+            @include display(grid, center, center);
+            grid-template-columns: 1fr;
+            grid-template-rows   : repeat(3, 1fr);
+
+            .card {
+                @include display (flex, center, center);
+                border       : 2px solid rgb(221, 221, 221);
+                border-radius: $--lw-gap;
+                padding      : $--lw-gap;
+                position     : relative;
+                z-index      : 0;
+                overflow     : hidden;
+
+
+                img {
+                    @include measure(100%, 50%);
+                }
+
+                .doc-info {
+                    @include display(flex, center, start, column);
+                    gap: $--xlw-gap;
+                    @include measure(100%, 50%);
+
+                    h2 {
+                        border-left : 2px solid $-red;
+                        padding     : 0;
+                        padding-left: $--xlw-gap;
+                    }
+
+
+                }
+
+                &:last-child {
+                    height        : 100%;
+                    flex-direction: column;
+                    gap           : $--lw-gap;
+                    border        : none;
+
+
+                    .img-wrapper {
+                        @include measure(100%, 100%);
+                        min-height         : 300px;
+                        background-image   : url('../media/img/team/end.jpeg');
+                        background-position: 20 40;
+                        background-size    : cover;
+                        background-repeat  : no-repeat;
+                        border-radius      : $--lw-gap;
+
+                        img {
+                            border-radius: $--lw-gap;
+                            display      : none;
+                        }
+                    }
+
+                    .doc-info {
+                        @include display(flex, center, initial, column);
+                        @include measure();
+                        gap: $--lwMd-gap;
+
+                        h3 {
+                            margin        : auto;
+                            color         : $--dark-blue;
+                            line-height   : 1.2;
+                            position      : relative;
+                            padding-bottom: $--xlw-gap;
+
+                            &::after {
+                                @include measure(2px, 100%);
+                                @include position(absolute, left, bottom, 0%, -10%);
+                                background-color: $-red;
+                                content         : '';
+                            }
+                        }
+
+                        button {
+                            padding: $--xlw-gap $--lg-gap;
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width:768px) {
+    .team-preview .main-half .first-rect h1 {
+        font-size: $--lg-ftn;
+    }
+
+    .team-preview .second-half .card-wrapper .card {
+        .doc-info h2 {
+            font-size: 1.2rem;
+        }
+
+        &:last-child .doc-info h3 {
+            font-size: $--lw-ftn;
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .team-preview {
+        @include measure(auto, 85%);
+        margin: auto;
+
+        .main-half {
+            flex-direction: row;
+            text-align    : initial;
+            width         : 80%;
+
+            .first-rect {
+
+                h4,
+                h1 {
+                    margin: initial;
+                }
+
+                h4 {
+                    @include measure (auto, 60%);
+                }
+            }
+
+            .second-rect {
+                img {
+                    @include measure(100%, 100%);
+                }
+            }
+        }
+
+        .second-half {
+            gap: $--md-gap;
+
+            .card-wrapper {
+                @include display(grid, center, center);
+                gap                  : $--xlw-gap;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows   : 1fr;
+
+                .card {
+
+                    .doc-info {
+
+                        h4 {
+                            padding    : 0;
+                            border-left: none;
+
+                            &::after {
+                                @include measure(2px, 70%);
+                                @include position(absolute, left, bottom, 0%, -10%);
+                                background-color: $-red;
+                                content         : '';
+                            }
+                        }
+
+                    }
+
+                    &:last-child {
+                        gap           : $--lw-gap;
+                        flex-direction: row;
+                        height        : calc(100% - 2rem);
+                        overflow      : hidden;
+
+                        .img-wrapper {
+                            min-height      : 200px;
+                            display         : flex;
+                            overflow        : hidden;
+                            align-items     : center;
+                            background-image: none;
+
+                            img {
+                                display: block;
+                                @include measure();
+                                max-height     : 100%;
+                                object-fit     : cover;
+                                object-position: center;
+                            }
+                        }
+
+
+                        .doc-info {
+                            @include measure(20%, 100%);
+                            gap: $--lwMd-gap;
+
+                            h2 {
+                                font-size: $--lw-ftn;
+                                position : relative;
+
+
+                                &::after {
+                                    @include measure(2px, 70%);
+                                    @include position(absolute, left, bottom, 0%, -10%);
+                                    background-color: $-red;
+                                    content         : '';
+                                }
+                            }
+
+                            button {
+                                padding      : $--xlw-gap $--lg-gap;
+                                border-radius: 0 $--lw-gap $--lw-gap 0;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 361px) {
+
+    .team-preview .second-half .card {
+        .img-wrapper {
+            background-position: top;
+        }
+
+        &:last-child {
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+}

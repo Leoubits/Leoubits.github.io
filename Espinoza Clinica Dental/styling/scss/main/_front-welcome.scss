@@ -1,0 +1,371 @@
+@import '../_variables';
+
+.front-welcome {
+    @include display (flex, center, center);
+    min-height           : 50rem !important;
+    background-image     : url('../media/img/front-welcome/1.jpeg');
+    background-position  : center;
+    background-size      : cover;
+    position             : relative;
+    background-color     : rgba(65, 65, 65, 0.8);
+    background-blend-mode: multiply;
+    transition           : 1s background-image ease;
+
+    .info-welcome {
+        @include display (flex, center, center, column);
+        gap          : $--lw-gap;
+        padding      : $--lw-gap $--md-gap;
+        width        : 100%;
+        border-radius: 0 $--lw-gap $--lw-gap 0;
+        text-align   : center;
+        margin-bottom: $--md-gap;
+
+        h1 {
+            font-size: $--lg-ftn;
+            color    : white;
+            position : relative;
+
+            &::after {
+                @include measure(2px, 20%);
+                @include position(absolute, left, bottom, 50%, -10%);
+                background-color: $-red;
+                content         : '';
+            }
+        }
+
+        p {
+            font-size: 0.85rem;
+            color    : white;
+        }
+
+        button {
+            width: 55%;
+        }
+    }
+
+    .horarios {
+        @include display (flex, center, center);
+        gap          : $--md-gap;
+        width        : 95%;
+        min-height   : 130px;
+        border-radius: $--lw-gap;
+        @include position (absolute, left, bottom, 50%, -20%);
+        background-color     : $--blue;
+        box-shadow           : 0px 4px 6px 1px rgb(109, 107, 107);
+        border               : 3px solid white;
+        background-image     : url('../../media/img/front-welcome/smile.jpg');
+        background-position  : center;
+        background-size      : cover;
+        background-blend-mode: multiply;
+        z-index              : 100;
+
+        .horarios-inner-container {
+            @include display (flex, center, center);
+
+            .horarios-mob-logo {
+                display: none;
+            }
+
+            .rect-container {
+                @include display(flex, center, center);
+
+                .rect {
+                    @include display(flex, center, center, column);
+                    gap         : $--lw-gap;
+                    padding     : $--lwMd-gap;
+                    border-right: 3px solid white;
+
+                    h3 {
+                        font-size  : $--lw-ftn;
+                        position   : relative;
+                        font-weight: 600;
+
+                        &::after {
+                            @include measure(2px, 100%);
+                            @include position(absolute, left, bottom, 0%, -10%);
+                            background-color: $-red;
+                            content         : '';
+                        }
+                    }
+
+                    p {
+                        color: $--whiteish-transition;
+                    }
+
+                }
+
+            }
+
+            .rect {
+                @include display(flex, center, center, column);
+                gap         : $--lw-gap;
+                padding     : $--lwMd-gap;
+                border-right: 3px solid white;
+
+                h3 {
+                    position   : relative;
+                    font-weight: 600;
+
+                    &::after {
+                        @include measure(2px, 100%);
+                        @include position(absolute, left, bottom, 0%, -10%);
+                        background-color: $-red;
+                        content         : '';
+                    }
+                }
+
+                p {
+                    color: $--whiteish-transition;
+                }
+
+            }
+
+            .final {
+                padding-left: $--lg-gap;
+                border-right: none;
+                gap         : $--xlw-gap;
+
+                img {
+                    height       : 65px;
+                    width        : 65px;
+                    border-radius: $--lw-gap;
+                }
+
+                h3 &::after {
+                    content: none;
+                }
+            }
+        }
+
+    }
+}
+
+
+@media screen and (max-width:978px) {
+    .front-welcome .horarios .horarios-inner-container .rect-container {
+        flex-direction: column;
+
+        .rect {
+            padding       : $--xlw-gap $--lw-gap;
+            border-right  : none;
+            flex-direction: row;
+            margin-right  : auto;
+        }
+
+    }
+
+    .final {
+        border-left : 3px solid white;
+        border-right: 3px solid white;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:1025px) and (min-height:1024px) {
+
+    .front-welcome {
+
+        .horarios {
+            @include position (absolute, left, bottom, 50%, 100%);
+
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .front-welcome {
+        height: 80vh;
+
+        .info-welcome {
+            gap: $--lg-gap;
+
+            h1 {
+                font-size: $--BIG-TITLE;
+            }
+
+            p {
+                font-size: $--LG-lwMd-ft;
+            }
+
+            button {
+                width: 25%;
+            }
+        }
+    }
+
+    .front-welcome .horarios {
+        width: 70%;
+
+        .horarios-inner-container .final {
+            flex-direction: row;
+            gap           : $--md-gap;
+
+            img {
+                height       : 5vw;
+                width        : 5vw;
+                border-radius: $--lw-gap;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width:1025px) and (min-height:900px) {
+    .front-welcome {
+        height: 100vh !important;
+
+        .info-welcome {
+            margin-bottom: 15rem;
+
+            h1 {
+                font-size: 10vw;
+            }
+        }
+
+        .horarios {
+            @include position (absolute, left, bottom, 50%, 65%);
+            min-height: 260px;
+
+            .horarios-inner-container {
+                flex-direction: column;
+
+                .rect-container {
+                    order: 2 !important;
+
+                    .rect {
+                        margin: auto;
+
+                        &:nth-child(2) {
+                            border-right: none;
+                        }
+
+                        h3 {
+                            font-size: $--LG-lg-ftn !important;
+                        }
+
+                        p {
+                            font-size: $--LG-lg-ftn !important;
+                        }
+                    }
+                }
+
+                .final {
+                    order       : 1 !important;
+                    border-left : none;
+                    padding-left: $--lwMd-gap;
+
+                    img {
+                        width:
+                            12% !important;
+                        height:
+                            12% !important;
+                    }
+
+                    h3 {
+                        font-size: $--TAB-TITLES !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:605px) {
+    .front-welcome {
+        height: 75vh !important;
+    }
+
+    .front-welcome .horarios {
+        gap    : 0;
+        padding: $--lw-gap 0;
+        bottom : -15% !important;
+
+
+        .horarios-inner-container {
+            flex-direction: column;
+
+            .horarios-mob-logo {
+                @include display (flex, center, center);
+                width         : 100%;
+                margin        : auto;
+                padding-bottom: $--lw-gap;
+                border-bottom : 2px solid white;
+
+                img {
+                    height       : 40px !important;
+                    width        : 40px !important;
+                    border-radius: $--xlw-gap !important;
+                }
+
+                h1 {
+                    font-size    : $--md-ftn !important;
+                    padding      : $--xlw-gap;
+                    border-radius: $--lw-gap;
+                }
+
+                img {
+                    height       : 60px;
+                    width        : 60px;
+                    border-radius: $--lw-gap;
+                }
+
+            }
+
+            .final {
+                display: none;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width:541px) {
+    .front-welcome {
+
+        .info-welcome {
+
+            h1 {
+                font-size: 3.2rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-height:520px) {
+    .front-welcome {
+        min-height: 60vh !important;
+
+        .horarios {
+            bottom: -10% !important;
+        }
+    }
+}
+
+@media screen and (max-width:361px) {
+    .front-welcome {
+        min-height: 70vh !important;
+    }
+
+    .front-welcome .horarios {
+        flex-direction: column;
+
+        .horarios-inner-container {
+
+            .rect-container .rect {
+                padding: $--xlw-gap $--lwMd-gap;
+            }
+
+            .final {
+                display: none;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width:321px) {
+    .front-welcome {
+        min-height: 10vh !important;
+    }
+}

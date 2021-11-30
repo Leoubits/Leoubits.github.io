@@ -1,0 +1,132 @@
+@import '../variables';
+
+.contacto-about {
+    @include display(flex, center, center, column);
+    width              : 100%;
+    background-image   : url('../../media/img/contacto-about/bg-2.png');
+    background-size    : cover;
+    background-position: center;
+
+    .wrapper {
+        @include display(flex, center, center, column);
+        gap       : $--md-gap;
+        padding   : $--md-gap 0;
+        width     : 85%;
+        margin    : auto;
+        text-align: center;
+
+        h4 {
+            width : 60%;
+            margin: auto;
+
+            &::after {
+                background-color: $-red;
+            }
+        }
+
+        h5 {
+            color: rgb(88, 88, 88);
+
+        }
+
+        .main {
+            @include display(flex, center, start, column);
+            gap            : $--lw-gap;
+            flex           : 1;
+            width          : 100%;
+            padding        : $--lwMd-gap;
+            background     : radial-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.1));
+            border-radius  : $--lw-gap;
+            backdrop-filter: blur(2px);
+            position       : relative;
+
+            .titles {
+                @include display(flex, center, start, column);
+                gap: $--xlw-gap;
+
+                margin: auto;
+
+                h1 {
+                    color    : $--dark-blue;
+                    font-size: $--xlg-ftn !important;
+                }
+
+                h4 {
+                    width         : 80%;
+                    padding-bottom: 0
+                }
+
+
+            }
+
+            .contact-info {
+                @include display(flex, center, start, column);
+                gap   : $--lw-gap;
+                margin: auto
+            }
+
+
+        }
+
+        .map {
+            @include display(flex, center, center);
+            flex         : 1.3;
+            width        : 100%;
+            border-radius: $--lw-gap;
+
+            iframe {
+                border       : 3px solid rgb(255, 94, 69);
+                border-radius: $--lw-gap;
+                min-height   : 400px;
+                width        : 100%;
+            }
+        }
+
+    }
+
+
+
+}
+
+@media screen and (min-width:768px) {
+    .contacto-about {
+        background-image: url('../../media/img/contacto-about/bg.png');
+
+        .wrapper {
+            flex-direction: row;
+            text-align    : start;
+
+
+            h4 {
+                margin: 0 !important;
+            }
+
+            .titles {
+                margin: 0 !important;
+            }
+
+            .main {
+                padding: $--md-gap $--lg-gap !important;
+            }
+
+            .main,
+            .map {
+                width: 50%;
+            }
+
+            .contact-info {
+                margin: 0 !important;
+            }
+
+            .map {
+                iframe {
+                    height: 150px !important;
+                    width : 100%;
+                }
+            }
+        }
+
+    }
+
+
+}

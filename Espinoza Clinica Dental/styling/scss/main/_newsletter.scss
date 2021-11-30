@@ -1,0 +1,137 @@
+@import '../variables';
+
+.newsletter {
+    @include display (flex, center, initial, column);
+    gap             : $--md-gap;
+    background-color: $--dark-bg;
+    padding         : $--md-gap;
+    margin          : auto;
+
+    .news-info {
+        @include display (flex, center, initial, column);
+        gap: $--lw-gap;
+
+        h4,
+        h1 {
+            margin: auto;
+        }
+
+        h1 {
+
+            color     : $--blue;
+            text-align: center;
+        }
+
+        h4 {
+            color: $--subText-darkbg;
+
+            &::after {
+                background-color: $-red;
+            }
+        }
+
+    }
+
+    .news-form {
+        margin: auto;
+
+        input {
+            border-radius: $--lw-gap 0 0 $--lw-gap;
+            padding      : $--xlw-gap $--xlg-gap;
+
+
+        }
+
+        button {
+            border-radius: 0 $--lw-gap $--lw-gap 0;
+        }
+    }
+
+    .formas-pago {
+        @include display (flex, center, center);
+        gap   : $--xlw-gap;
+        margin: auto;
+
+        h5 {
+
+            color        : $--subText-darkbg;
+            text-align   : center;
+            border-right : 2px solid $-red;
+            padding-right: $--lw-gap;
+        }
+
+        img {
+            &:nth-child(2) {
+                padding-left: $--lw-gap;
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width:768px) {
+    .newsletter {
+        .news-info {
+            h1 {
+                font-size: $--md-ftn;
+            }
+
+            h4 {
+                font-size: $--lw-ftn;
+            }
+
+            .news-form input {
+                font-size: $--lw-ftn;
+            }
+        }
+    }
+
+    .newsletter .formas-pago {
+        h5 {
+            font-size: $--lw-ftn;
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .newsletter {
+        .news-info {
+            h1 {
+                font-size: $--lg-ftn;
+            }
+        }
+
+        .news-form input {
+            font-size: $--lwmd-ftn;
+        }
+    }
+}
+
+@media screen and (max-width:540px) {
+    .newsletter {
+        .news-form {
+            input {
+                text-align: center;
+                width     : 55%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:281px) {
+    .newsletter {
+        .news-form {
+            input {
+                text-align: center;
+                padding   : $--xlw-gap 0;
+                flex      : 1;
+            }
+
+            button {
+                padding: $--xlw-gap 0;
+                width  : 40%;
+            }
+        }
+    }
+}

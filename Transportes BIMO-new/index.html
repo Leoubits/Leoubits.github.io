@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""
+        >
+        <link rel="stylesheet" href="styling/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Numans&family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap" rel="stylesheet">
+        <link rel="icon" type="img/png" href="../Transportes BIMO-new/styling/media/img/header/3.png">
+        <base href="/">
+        <title>Transportes Bimo S.A. de C.V.</title>
+    </head>
+    <body>
+        <div class="container-all">
+            <div class="nav-links-mob">
+                <div class="nav-links-mob-title">
+                    <h1>TRANSPORTES BIMO</h1>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        class="x_close"
+                        width="45"
+                        height="45"
+                        viewBox="0 0 171 171"
+                        style=" fill:#000000;"
+                    >
+                        <g
+                            fill="none"
+                            fill-rule="nonzero"
+                            stroke="none"
+                            stroke-width="1"
+                            stroke-linecap="butt"
+                            stroke-linejoin="miter"
+                            stroke-miterlimit="10"
+                            stroke-dasharray=""
+                            stroke-dashoffset="0"
+                            font-family="none"
+                            font-weight="none"
+                            font-size="none"
+                            text-anchor="none"
+                            style="mix-blend-mode: normal"
+                        >
+                            <path d="M0,171.99591v-171.99591h171.99591v171.99591z" fill="none"></path>
+                            <g fill="#e74c3c">
+                                <path d="M49.26938,44.46l-4.80937,4.80937l36.3375,36.23063l-36.3375,36.23063l4.80937,4.80937l36.44438,-36.23062l36.3375,36.23062l4.80938,-4.80937l-36.3375,-36.23063l36.3375,-36.23063l-4.80938,-4.80937l-36.3375,36.23062z"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <li>
+                    <a href="#inicio">
+                        <img src="https://img.icons8.com/ios/30/000000/home--v1.png">
+                        <div class="link-text">Inicio</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#rutas">
+                        <img src="https://img.icons8.com/ios/30/000000/near-me.png">
+                        <div class="link-text">Rutas</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#nosotros">
+                        <img src="https://img.icons8.com/ios/30/000000/company.png">
+                        <div class="link-text">Nosotros</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#valores">
+                        <img src="https://img.icons8.com/ios/30/000000/morale.png">
+                        <div class="link-text">Valores</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#unidades">
+                        <img src="https://img.icons8.com/ios/30/000000/truck.png">
+                        <div class="link-text">Unidades</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contacto">
+                        <img src="https://img.icons8.com/dotty/30/000000/business-contact.png">
+                        <div class="link-text">Contacto</div>
+                    </a>
+                </li>
+            </div>
+            <section class="header" id="inicio">
+                <div class="nav">
+                    <div class="logo">
+                        <img src="../Transportes BIMO-new/styling/media/img/header/logobimo.png" alt="Transportes Bimo S.A. de C.V.">
+                    </div>
+                    <div class="nav-links">
+                        <a href="../Transportes BIMO-new/#inicio">Inicio</a>
+                        <a href="../Transportes BIMO-new/#rutas">Rutas</a>
+                        <a href="../Transportes BIMO-new/#nosotros">Nosotros</a>
+                        <a href="../Transportes BIMO-new/#valores">Politicas</a>
+                        <a href="../Transportes BIMO-new/#unidades">Unidades</a>
+                        <a href="../Transportes BIMO-new/#contacto">Contacto</a>
+                    </div>
+                    <div class="hamburger">
+                        <img src="https://img.icons8.com/ios/50/000000/menu--v1.png">
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="about-company">
+                        <h1>La mejor solución para transporte de carga consolidada</h1>
+                    </div>
+                    <div class="title-container">
+                        <h2>
+                            TRANSPORTES
+                        </h2>
+                    </div>
+                    <div class="title-container-2">
+                        <h2>
+                            BIMO
+                        </h2>
+                    </div>
+                    <div class="abs-logo">
+                        <img src="../Transportes BIMO-new/styling/media/img/header/ctpat.png" alt="">
+                    </div>
+                </div>
+                <div class="sub-title-container">
+                    <img src="../Transportes BIMO-new/styling/media/img/nosotros/map.jpg" alt="">
+                    <h3>Subscribete a nuestro boletín</h3>
+                    <div class="input">
+                        <input type="email" placeholder="TuCorreo@mail.com">
+                        <p>Recibe las últimas noticias y actualizaciones en tu correo</p>
+                    </div>
+                    <button class="boton">Subscribirse</button>
+                    <div class="img-wrapper-second">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="100"
+                            height="100"
+                            viewBox="0 0 171 171"
+                            style=" fill:#000000;"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                style="mix-blend-mode: normal"
+                            >
+                                <path d="M0,171.99591v-171.99591h171.99591v171.99591z" fill="none"></path>
+                                <g fill="#ffffff">
+                                    <path d="M51.25992,13.65328c-1.38938,0 -2.6318,0.84164 -3.16617,2.12414c-0.52102,1.29586 -0.21375,2.76539 0.7882,3.74063l65.98195,65.98195l-65.98195,65.98195c-0.89508,0.855 -1.25578,2.1375 -0.93516,3.32648c0.30727,1.20235 1.24242,2.1375 2.44477,2.44477c1.18898,0.32063 2.47148,-0.04008 3.32648,-0.93516l68.4,-68.4c1.33594,-1.33594 1.33594,-3.50015 0,-4.83609l-68.4,-68.4c-0.64125,-0.66797 -1.52297,-1.02867 -2.45813,-1.02867z"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            <section class="rutas" id="rutas">
+                <div class="rutas-title">
+                    <h1>Nuestras Rutas</h1>
+                </div>
+                <div class="ruta-wrapper">
+                    <div class="ruta">
+                        <img
+                            class="estado"
+                            src="../Transportes BIMO-new/styling/media/img/header/rutas/1.png"
+                            alt="BCS"
+                            id="bcs"
+                        >
+                        <h3>BCS</h3>
+                    </div>
+                    <div class="ruta">
+                        <img class="estado" src="../Transportes BIMO-new/styling/media/img/header/rutas/2.png" alt="Sinaloa">
+                        <h3>Sinaloa</h3>
+                    </div>
+                    <div class="ruta">
+                        <img class="estado" src="../Transportes BIMO-new/styling/media/img/header/rutas/6.png" alt="Sonora">
+                        <h3>Sonora</h3>
+                    </div>
+                    <div class="ruta">
+                        <img class="estado" src="../Transportes BIMO-new/styling/media/img/header/rutas/4.png" alt="BCN">
+                        <h3>BCN</h3>
+                    </div>
+                    <div class="ruta">
+                        <img class="estado" src="../Transportes BIMO-new/styling/media/img/header/rutas/5.png" alt="Durango">
+                        <h3>Durango</h3>
+                    </div>
+                    <div class="ruta">
+                        <img class="estado" src="../Transportes BIMO-new/styling/media/img/header/rutas/3.png" alt="Chihuahua">
+                        <h3>Chihuahua</h3>
+                    </div>
+                </div>
+                <div id="mapid"></div>
+                <div class="extra-info-toast">
+                    <h1>Nuestro Compromiso: Tú Satisfacción.</h1>
+                    <p>
+                        Unidades de última linea monitoreadas por satélite y comunicación directa con el conductor las 24
+                    horas del día.
+                    </p>
+                </div>
+            </section>
+            <section class="nosotros">
+                <div class="nosotros-content" id="nosotros">
+                    <div class="card main">
+                        <h1>Nosotros</h1>
+                        <h3>Nuestra visión del trabajo</h3>
+                    </div>
+                    <div class="card first jscard">
+                        <h3>
+                            <img src="https://img.icons8.com/ios/50/000000/runner-starting-the-race.png">
+                            Inicios
+                        </h3>
+                        <p>
+                            Transportes Bimo inicia operaciones en el año 2005 para satisfacer las necesidades en el servicio
+                        de Transporte de Carga en el Estado de Sonora.
+                        </p>
+                    </div>
+                    <div class="card second jscard">
+                        <h3>
+                            <img src="https://img.icons8.com/material-outlined/50/000000/shield.png">
+                            Seguridad
+                        </h3>
+                        <p>
+                            Nuestras actividades laborales se desarrollarán en condiciones adecuadas de seguridad,
+                        promoviendo el bienestar de empleados, clientes y comunidad.
+                        </p>
+                    </div>
+                    <div class="card third jscard">
+                        <h3>
+                            <img src="https://img.icons8.com/ios-glyphs/50/000000/trophy.png">
+                            Eficiencia
+                        </h3>
+                        <p>
+                            Crecemos y mejoramos el servicio con miras a mantener nuestra meta de entregar todas nuestras
+                        cargas a tiempo, completas, intactas y a precios competitivos.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="separator">
+                <div class="img-wrapper">
+                    <img src="../Transportes BIMO-new/styling/media/img/rutas/rutas-circle.jpg" alt="">
+                </div>
+                <div class="separator-text">
+                    <h3>Estamos a sus ordenes</h3>
+                    <p>
+                        Nuestra flotilla compuesta por camiones de 1 a 15 toneladas garantiza el servicio adecuado para
+                    transportar su carga al destino indicado
+                    </p>
+                </div>
+                <div class="img-wrapper-second">
+                    <img src="https://img.icons8.com/external-becris-lineal-becris/100/000000/external-next-mintab-for-ios-becris-lineal-becris.png">
+                </div>
+            </section>
+            <section class="first-rect" id="valores">
+                <h1>Valores</h1>
+                <h3>Servirte es nuestra prioridad</h3>
+                <div class="sphere_1">
+                    <img src="./styling/media/img/politicas/sphere.png" alt="">
+                </div>
+                <div class="sphere_2">
+                    <img src="./styling/media/img/politicas/sphere.png" alt="">
+                </div>
+            </section>
+            <section class="politicas">
+                <div class="politicas-mob">
+                    <div class="politicas-wrapper">
+                        <div class="politicas-card a_first"></div>
+                    </div>
+                    <div class="politicas-card">
+                        <img src="https://img.icons8.com/ios-glyphs/60/000000/honesty.png">
+                        <h1>Honestidad</h1>
+                        <p>
+                            Promover y practicar la competencia leal, conduciendo todas las actividades de la empresa de
+                        acuerdo a las leyes existentes.
+                        </p>
+                    </div>
+                    <div class="politicas-card b_first">
+                        <img src="https://img.icons8.com/ios-filled/60/000000/service.png">
+                        <h1>Servicio</h1>
+                        <p>
+                            Tratar de una manera honesta a nuestros clientes, proveedores y personal, asegurando
+                        transparencia y el cumplimiento de los compromisos.
+                        </p>
+                    </div>
+                    <div class="politicas-wrapper b_second">
+                        <div class="politicas-card b_second"></div>
+                    </div>
+                    <div class="politicas-wrapper">
+                        <div class="politicas-card c_first"></div>
+                    </div>
+                    <div class="politicas-card c_second">
+                        <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/60/000000/external-quality-logistic-delivery-kiranshastry-solid-kiranshastry.png">
+                        <h1>Calidad</h1>
+                        <p>
+                            Tendremos presencia y crecimiento en los mercados excediendo las expectativas de calidad del
+                        servicio con la eficiencia que el
+                        cliente requiera.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="unidades" id="unidades">
+                <div class="unidades-first-rect">
+                    <div class="titles">
+                        <h1>Unidades</h1>
+                        <h3>El motor que nos une</h3>
+                        <p>
+                            Tu carga está en excelentes manos y ponemos a tú disposición nuestra flotilla de unidades
+                        especializadas.
+                        </p>
+                    </div>
+                    <div class="pic-ctn">
+                        <img class="pic" src="../Transportes BIMO-new/styling/media/img/unidades/flota/1 unidad con capacidad 12 toneladas refrigerada.png" alt="">
+                        <img class="pic" src="../Transportes BIMO-new/styling/media/img/unidades/flota/2 unidad capacidad 2 toneladas refrigerada.png" alt="">
+                        <img class="pic" src="../Transportes BIMO-new/styling/media/img/unidades/flota/3 unidad de 24 pies, capacidad 12 toneladas.png" alt="">
+                        <img class="pic" src="../Transportes BIMO-new/styling/media/img/unidades/flota/4 unidad capacidad 35 toneladas.png" alt="">
+                        <img class="pic" src="../Transportes BIMO-new/styling/media/img/unidades/flota/5 unidad capacidad 35 toneladas.png" alt="">
+                        <img class="pic" src="../Transportes BIMO-new/styling/media/img/unidades/flota/6 unidad capacidad 3 toneladas.png" alt="">
+                        <img class="pic" src="../Transportes BIMO-new/styling/media/img/unidades/flota/7 unidad con capacidad de 1 tonelada refrigerada.png" alt="">
+                        <img class="pic" src="../Transportes BIMO-new/styling/media/img/unidades/flota/8 unidad con capacidad de 15 tonelas refrigerada.png" alt="">
+                    </div>
+                </div>
+                <div class="unidades-second-rect">
+                    <h1>Nuestra Flotilla</h1>
+                    <div class="unidades-card-wrapper">
+                        <div class="card">
+                            <div class="img-wrapper">
+                                <img src="../Transportes BIMO-new/styling/media/img/unidades/flota/1 unidad con capacidad 12 toneladas refrigerada.png" alt="">
+                            </div>
+                            <h3>
+                                Unidad con capacidad de
+                                <b>12 toneladas refrigerada.</b>
+                            </h3>
+                        </div>
+                        <div class="card">
+                            <div class="img-wrapper">
+                                <img src="../Transportes BIMO-new/styling/media/img/unidades/flota/2 unidad capacidad 2 toneladas refrigerada.png" alt="">
+                            </div>
+                            <h3>
+                                Unidad con capacidad de
+                                <b>2 toneladas refrigerada.</b>
+                            </h3>
+                        </div>
+                        <div class="card">
+                            <div class="img-wrapper">
+                                <img src="../Transportes BIMO-new/styling/media/img/unidades/flota/3 unidad de 24 pies, capacidad 12 toneladas.png" alt="">
+                            </div>
+                            <h3>
+                                Unidad de 24 pies, capacidad
+                                <b>12 toneladas.</b>
+                            </h3>
+                        </div>
+                        <div class="card">
+                            <div class="img-wrapper">
+                                <img src="../Transportes BIMO-new/styling/media/img/unidades/flota/4 unidad capacidad 35 toneladas.png" alt="">
+                            </div>
+                            <h3>
+                                Unidad con capacidad de
+                                <b>35 toneladas.</b>
+                            </h3>
+                        </div>
+                        <div class="card">
+                            <div class="img-wrapper">
+                                <img src="../Transportes BIMO-new/styling/media/img/unidades/flota/5 unidad capacidad 35 toneladas.png" alt="">
+                            </div>
+                            <h3>
+                                Unidad con capacidad de
+                                <b>35 toneladas.</b>
+                            </h3>
+                        </div>
+                        <div class="card">
+                            <div class="img-wrapper">
+                                <img src="../Transportes BIMO-new/styling/media/img/unidades/flota/6 unidad capacidad 3 toneladas.png" alt="">
+                            </div>
+                            <h3>
+                                Unidad con capacidad de
+                                <b> 3 toneladas.</b>
+                            </h3>
+                        </div>
+                        <div class="card">
+                            <div class="img-wrapper">
+                                <img src="../Transportes BIMO-new/styling/media/img/unidades/flota/7 unidad con capacidad de 1 tonelada refrigerada.png" alt="">
+                            </div>
+                            <h3>
+                                Unidad con capacidad de
+                                <b> 1 tonelada refrigerada.</b>
+                            </h3>
+                        </div>
+                        <div class="card">
+                            <div class="img-wrapper">
+                                <img src="../Transportes BIMO-new/styling/media/img/unidades/flota/8 unidad con capacidad de 15 tonelas refrigerada.png" alt="">
+                            </div>
+                            <h3>
+                                Unidad con capacidad de
+                                <b>15 toneladas refrigerada.</b>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contacto" id="contacto">
+                <div class="contacto-content first">
+                    <div class="contacto-title">
+                        <h1>
+                            Contacto
+                            <span>a sus ordenes</span>
+                        </h1>
+                    </div>
+                    <div class="form">
+                        <div class="form-element">
+                            <label for="name">
+                                <img src="https://img.icons8.com/ios-glyphs/20/000000/user--v1.png">
+                                Nombre
+                            </label>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="form-element">
+                            <label for="mail">
+                                <img src="https://img.icons8.com/material-outlined/20/000000/email.png">
+                                Email
+                            </label>
+                            <input type="email" id="mail">
+                        </div>
+                        <div class="form-msn">
+                            <label for="msn">
+                                <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/20/000000/external-message-contact-flatart-icons-outline-flatarticons.png">
+                                Mensaje
+                            </label>
+                            <textarea
+                                name=""
+                                id="msn"
+                                cols="20"
+                                rows="2"
+                            ></textarea>
+                        </div>
+                        <button class="boton">Enviar</button>
+                    </div>
+                </div>
+                <div class="contacto-content second">
+                    <div class="footer-logo">
+                        <img src="../Transportes BIMO-new/styling/media/img/header/logobimo.png" alt="">
+                    </div>
+                    <div class="footer-maps">
+                        <div class="map-hmo map">
+                            <h3>Hermosillo</h3>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.610065624438!2d-111.05236485043606!3d29.087665482153312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce9aceb1623a59%3A0x19758416f470231d!2sTransportes%20Bimo!5e0!3m2!1ses-419!2smx!4v1632873922747!5m2!1ses-419!2smx"
+                                width="600"
+                                height="450"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                            ></iframe>
+                        </div>
+                        <div class="map-mexi map">
+                            <h3>Mexicali</h3>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3360.9112933632205!2d-115.3852101503112!3d32.60854738093005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d7715343e194d7%3A0x174ec05d73a65e08!2sTransportes%20Bimo%20Sa%20De%20Cv!5e0!3m2!1ses-419!2smx!4v1632873980589!5m2!1ses-419!2smx"
+                                width="600"
+                                height="450"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Transportes Bimo</h3>
+                        <a href="">Rutas</a>
+                        <a href="">Nosotros</a>
+                        <a href="">Valores</a>
+                        <a href="">Contacto</a>
+                    </div>
+                    <div class="footer-last">
+                        <div class="footer-social">
+                            <h3>
+                                Redes Sociales
+                            </h3>
+                            <div class="social-ico-wrapper">
+                                <img src="https://img.icons8.com/ios-filled/30/000000/facebook-new.png">
+                                <img src="https://img.icons8.com/ios-filled/30/000000/twitter-circled--v1.png">
+                                <img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-circle.png">
+                                <img src="https://img.icons8.com/ios-filled/30/000000/youtube-music.png">
+                            </div>
+                        </div>
+                        <div class="footer-copyright">
+                            <p>
+                                Transportes Bimo S.A. de C.V.
+                            </p>
+                            <p> Copyright(C) 2021</p>
+                            <p> Todos los derechos reservados</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="../Transportes BIMO-new/js/leaflet.js"></script>
+    <script src="../Transportes BIMO-new/js/navlinks.js"></script>
+    <script src="../Transportes BIMO-new/js/observers.js"></script>
+    <script src="../Transportes BIMO-new/js/backgroundSwitcher.js"></script>
+</body>
+</html>

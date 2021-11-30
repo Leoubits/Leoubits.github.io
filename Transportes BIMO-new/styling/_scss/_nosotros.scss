@@ -1,0 +1,400 @@
+@import './variables';
+
+.nosotros {
+    @include display (grid);
+    grid-template-columns: 100%;
+    grid-template-rows   : 90%;
+    grid-template-areas  :
+        "content";
+    background-image     : url("./media/img/nosotros/map.jpg");
+    background-color     : $--main-bg-black;
+    text-shadow          : $--text-shadow-black;
+    background-position  : center;
+    background-size      : cover;
+    background-blend-mode: overlay;
+    height               : 230vh;
+    width                : 100%;
+    align-content        : center;
+
+}
+
+.nosotros-content {
+    @include display (grid, center, center);
+    grid-template-columns: 100%;
+    grid-template-rows   : 20% repeat(3, 1fr);
+    margin               : auto;
+    gap                  : 1rem;
+    grid-area            : content;
+    height               : 100%;
+    width                : 85%;
+
+    .card {
+        width : 100%;
+        height: 100%;
+        color : white;
+        @include border (2px);
+        transition: transform 1s ease, opacity 1s ease;
+        opacity   : 1;
+
+        h3 {
+            @include display (flex, start, center);
+            color         : $--main-orange;
+            border-bottom : 2px solid $--main-orange;
+            font-size     : $--fntSz-header-sm;
+            font-family   : $--fnt-header;
+            font-weight   : bolder;
+            width         : 85%;
+            margin        : auto;
+            padding-bottom: 1rem;
+
+            img {
+                align-self  : center;
+                filter      : invert(1);
+                margin-right: 1.5rem;
+
+            }
+        }
+
+        p {
+            font-size  : $--fntSz-p-lg;
+            font-family: $--fnt-numans;
+            font-weight: 100;
+            line-height: 2.2;
+            width      : 85%;
+            margin     : auto;
+        }
+
+    }
+
+    .jscard {
+        opacity: 0;
+    }
+
+    @keyframes tranY {
+        10% {
+            transform: translateY(20%);
+        }
+
+        50% {
+            transform: translateY(15%);
+        }
+
+        100% {
+            transform: translateY(0%);
+        }
+    }
+
+    .first {
+        @include display(flex, center, center);
+        flex-direction: column;
+        @include background_img ('./media/img/nosotros/cards/first.jpg');
+        background-color: rgba(0, 0, 0, 0.5);
+        color           : white;
+        padding         : 1rem 0;
+
+        h3 {
+            width : 85%;
+            margin: auto;
+
+        }
+
+        p {
+            width : 85%;
+            margin: auto;
+        }
+    }
+
+    .second {
+        @include display(flex, center, center);
+        flex-direction: column;
+        @include background_img ('./media/img/nosotros/cards/second.jpg');
+        background-color: rgb(61, 61, 61);
+    }
+
+    .third {
+        @include display(flex, center, center);
+        flex-direction: column;
+        @include background_img ('./media/img/nosotros/cards/third.jpeg');
+        background-color: rgb(93, 93, 93);
+    }
+
+    .main {
+        @include display(flex, start, center);
+        flex-direction       : column;
+        background-image     : url('./media/img/nosotros/cards/main.jpg'), linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9));
+        background-blend-mode: multiply;
+        background-position  : center;
+        background-size      : cover;
+        width                : 100%;
+        height               : 100%;
+        padding              : 2rem 0;
+
+
+        h1 {
+            color      : white;
+            font-family: $--fnt-header;
+            text-shadow: $--text-shadow-black;
+            color      : $--main-orange;
+            width      : 85%;
+            margin     : auto;
+        }
+
+        h3 {
+            color: white !important;
+        }
+    }
+
+
+
+}
+
+
+
+@media screen and (min-height:1024px) {
+    .nosotros {
+
+        min-height: 100vh !important;
+
+        .nosotros-content {
+            .card {
+                padding: 2rem 0rem;
+
+            }
+
+        }
+    }
+}
+
+
+@media screen and (min-width:768px) {
+    .nosotros .nosotros-content .card {
+        h3 {
+            font-size: $--BIG-TITLE;
+        }
+
+        p {
+            font-size: $--LG-xlg-ftn;
+        }
+    }
+
+    .main {
+        h1 {
+            font-size: 10vW;
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .nosotros .nosotros-content .card {
+        h3 {
+            font-size: $--LG-xlg-ftn;
+        }
+
+        p {
+            font-size: $--LG-xlw-ftn;
+        }
+    }
+
+    .main {
+        height: auto;
+
+        h1 {
+            font-size: 5vw;
+
+        }
+
+
+    }
+}
+
+@media screen and (min-height:1366px) {
+    .nosotros {
+
+        height: 100vh !important;
+    }
+
+    .nosotros .nosotros-content .card {
+        h3 {
+            font-size: $--SEPARATORS;
+        }
+
+        p {
+            font-size: $--LG-lg-ftn;
+        }
+
+        .main {
+            h1 {
+                font-size: 10vW;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1042px) {
+    .nosotros {
+        @include display (grid);
+        gap                  : 1rem;
+        grid-template-columns: 100%;
+        grid-template-rows   : 85%;
+        grid-template-areas  :
+            "content";
+        height     : 130vh;
+        text-shadow: none;
+
+        .nosotros-content {
+            grid-area: content;
+            @include display (grid);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows   : 40% 60%;
+            grid-template-areas  :
+                'main       main       main'
+                'sub_card_1 sub_card_2 sub_card_3';
+            margin   : auto;
+            gap      : 1rem;
+            grid-area: content;
+            height   : 100%;
+            width    : 85%;
+
+            .card {
+                gap             : 0.5rem;
+                width           : 100%;
+                height          : 100%;
+                background-color: $--gray;
+                padding         : 1rem 0;
+                color           : white;
+
+                h3 {
+                    color: $--main-orange;
+                }
+            }
+
+            .first {
+                grid-area       : sub_card_1;
+                background-color: rgba(0, 0, 0, 0.6);
+
+            }
+
+            .second {
+                grid-area       : sub_card_2;
+                background-color: rgba(0, 0, 0, 0.7);
+
+            }
+
+            .third {
+                grid-area       : sub_card_3;
+                background-color: rgba(0, 0, 0, 0.55);
+            }
+
+            .main {
+                grid-area: main;
+                width    : 100%;
+                height   : 100%;
+                @include display (flex, start, center);
+
+                h1 {
+                    height: 10%;
+                    color : $--main-orange;
+                }
+
+                h3 {
+                    color         : white;
+                    height        : 10%;
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1041px) {
+    .nosotros {
+        height: 200vh;
+
+        .nosotros-content {
+            .card {
+                h3 {
+                    @include display (flex, start, center);
+                    color         : $--main-orange;
+                    border-bottom : 2px solid $--main-orange;
+                    font-family   : $--fnt-header;
+                    font-weight   : bolder;
+                    width         : 85%;
+                    margin        : auto;
+                    padding-bottom: 1rem;
+
+                    img {
+                        height: 40px;
+                        width : 40px;
+                    }
+
+
+                }
+
+                p {
+                    font-family: $--fnt-numans;
+                    font-weight: 300;
+                    line-height: 2;
+                    width      : 85%;
+                    margin     : auto;
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+
+
+    .nosotros .nosotros-content {
+        .card {
+            padding: $--med-gap 0;
+            gap    : $--low-gap;
+        }
+
+        .main {
+
+
+            h1 {
+                font-size: $--s-header;
+            }
+
+            h3 {
+                font-size: $--fntSz-h1-sm;
+
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:361px) {
+
+    .nosotros {
+        height: 250vh;
+    }
+
+    .nosotros .nosotros-content {
+        grid-template-rows: 15% repeat(3, 1fr);
+
+        .card {
+            opacity: 1;
+
+            p {
+                font-size: $--fntSz-p-sm;
+            }
+        }
+
+        .main {
+            h1 {
+                font-size: $--fntSz-header-sm;
+            }
+
+            h3 {
+                font-size: $--fntSz-h2;
+            }
+        }
+
+    }
+}

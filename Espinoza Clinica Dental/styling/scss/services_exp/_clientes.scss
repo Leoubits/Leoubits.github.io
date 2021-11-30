@@ -1,0 +1,182 @@
+@import '../_variables';
+
+.clientes {
+    @include display(flex, center, center);
+    gap                : $--lwMd-gap;
+    height             : auto;
+    margin             : auto;
+    margin-top         : 0;
+    padding-bottom     : $--md-gap;
+    padding-top        : $--md-gap;
+    background-image   : url('../media/img/clientes/bg.png');
+    background-size    : cover;
+    background-position: center;
+    background-repeat  : no-repeat;
+
+    .main {
+        @include display(flex, center, center, column);
+        @include measure();
+        gap: $--md-gap;
+
+
+        .inner-wrapper {
+            @include measure();
+            @include display (flex, center, center, column);
+            gap           : $--md-gap;
+            padding       : $--lwMd-gap;
+            padding-bottom: 0;
+            padding-top   : 0;
+
+            .titles {
+                @include display (flex, center, center, column);
+                background-color     : $--blue;
+                width                : 100%;
+                padding              : $--lw-gap;
+                gap                  : $--lw-gap;
+                border-radius        : $--lw-gap;
+                background-image     : url('../media/img/clientes/hands.png');
+                background-blend-mode: multiply;
+                background-size      : cover;
+                background-position  : center;
+
+                h4 {
+                    color: $--subText-darkbg;
+
+                    &::after {
+                        background-color: $-red;
+                    }
+                }
+            }
+
+            .photos {
+                @include display(grid, center, center);
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-rows   : auto;
+                width                : 85%;
+                height               : 100%;
+                margin               : auto;
+                gap                  : $--lw-gap;
+
+
+                .img-wrapper {
+                    margin             : auto;
+                    gap                : $--lw-gap;
+                    height             : 250px;
+                    width              : 250px;
+                    background-color   : rgb(255, 205, 164);
+                    background-position: center;
+                    background-size    : cover;
+                    border-radius      : $--lw-gap;
+                    border             : 3px solid $-red;
+
+                    &:nth-child(1) {
+                        background-image: url('../media/img/clientes/1.jpg');
+                    }
+
+                    &:nth-child(2) {
+                        background-image: url('../media/img/clientes/2.jpg');
+
+                    }
+
+                    &:nth-child(3) {
+                        background-image: url('../media/img/clientes/3.jpg');
+
+                    }
+                }
+
+            }
+        }
+
+        .end-msn {
+            background-color: $-red;
+
+            border-radius  : $--lw-gap;
+            backdrop-filter: blur(2px);
+            width          : 90%;
+            margin         : auto;
+
+
+            h3 {
+                color     : white;
+                text-align: center;
+                padding   : $--lw-gap 0;
+                font-size : $--lw-ftn;
+                margin    : auto;
+                width     : 80%;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .clientes .main .inner-wrapper .titles {
+        h1 {
+            font-size: $--lg-ftn;
+
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .clientes {
+        background-image: url('../media/img/contacto-about/bg-2.png');
+
+        .main {
+            height: 100%;
+
+            .inner-wrapper {
+
+
+                .titles {
+                    width: 85%;
+
+                    h1 {
+                        color: white;
+
+                    }
+
+                }
+
+                .photos {
+                    @include display (flex, center, center);
+                    justify-content: center !important;
+
+                    .img-wrapper {
+
+                        height: 270px;
+                        width : 270px;
+                    }
+                }
+            }
+
+            .end-msn {
+                background     : linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
+                border-radius  : $--lw-gap;
+                backdrop-filter: blur(2px);
+                max-width      : 85%;
+                margin         : auto;
+                padding        : $--lw-gap !important;
+                text-align     : center;
+
+                h3 {
+                    color    : white;
+                    margin   : auto;
+                    width    : 70%;
+                    padding  : 0;
+                    font-size: $--LG-lwMd-ft;
+                }
+            }
+        }
+
+
+
+
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1025px) and (min-height:900px) {
+    .clientes .main .end-msn h3 {
+        font-size: $--LG-lg-ftn;
+    }
+}

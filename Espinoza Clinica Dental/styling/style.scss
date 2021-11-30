@@ -1,0 +1,299 @@
+@import './scss/variables';
+@import './scss/main/nav';
+@import './scss/main/about-sep';
+@import './scss/main/services-land';
+@import './scss/main/team';
+@import './scss/main/newsletter';
+@import './scss/main/contacto-land';
+@import './scss/main/footer';
+@import './scss/nosotros/politics';
+@import './scss/nosotros/_fundador';
+@import './scss/services_exp/clientes';
+@import'./scss/nosotros/contacto-about';
+@import './scss/main/modal-contacto';
+@import './scss/services_exp/services-page';
+@import './scss/services_exp/laboratorio';
+@import './scss/main/front-welcome';
+@import './scss/nosotros/about-page';
+
+* {
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    list-style     : none;
+    outline        : none;
+    border         : none;
+    text-decoration: none;
+    user-select    : none;
+    font-family    : $--poppins;
+    color          : black;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: overlay;
+
+}
+
+.preload * {
+    transition        : none !important;
+    -webkit-transition: none !important;
+    -moz-transition   : none !important;
+    -ms-transition    : none !important;
+    -o-transition     : none !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background   : $--blue;
+    border-radius: 10px;
+}
+
+button {
+    background-color: $--blue;
+    border-radius   : $--md-gap;
+    color           : white;
+    cursor          : pointer;
+    padding         : $--xlw-gap !important;
+    box-shadow      : 0px 1px 5px black;
+
+    &:hover {
+        animation: pulse 1s ease;
+    }
+}
+
+h1 {
+    color      : white;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h3 {
+    color      : white;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+h4 {
+    color         : $--blue;
+    font-size     : $--lw-ftn;
+    font-weight   : 500;
+    padding-bottom: $--xlw-gap;
+    position      : relative;
+
+    &::after {
+        @include measure(2px);
+        @include position(absolute, left, bottom, 50%, -10%);
+        background-color: white;
+        content         : '';
+    }
+
+}
+
+h5 {
+    color      : black;
+    font-size  : 0.8rem;
+    font-weight: 600;
+}
+
+p {
+    color      : $--p-color;
+    font-size  : $--lw-ftn;
+    line-height: 2;
+    font-weight: 500;
+}
+
+.container-all {
+    position: relative;
+
+    .hamburger-links {
+        @include measure();
+        @include display (flex, center, center, column);
+        gap             : $--md-gap;
+        position        : fixed;
+        top             : 50%;
+        left            : 0%;
+        transform       : translate(100%, -50%);
+        background-color: $--dark-bg;
+        z-index         : 1000;
+        pointer-events  : none;
+        opacity         : 0;
+        transition      : transform 1s ease, opacity 1s ease;
+
+        .close_links {
+            @include position (absolute, right, top, 5%, 1%);
+            animation       : none;
+            background-color: transparent;
+            box-shadow      : none;
+            color           : $-red;
+            font-size       : $--lg-ftn;
+            text-shadow     : 1px 1px 3px black;
+            transition      : transform 1s ease;
+
+            &:hover {
+                transform: rotate(180deg);
+            }
+        }
+
+        .img-wrapper {
+            @include display (flex, center, center, column);
+            @include measure(20%, 100%);
+            position: relative;
+
+            img {
+
+                height: 100px;
+                width : 100px;
+            }
+
+            &::after {
+                @include measure(2px, 30%);
+                @include position(absolute, left, bottom, 50%, -10%);
+                background-color: $-red;
+                content         : '';
+            }
+        }
+
+        .nav-links {
+            @include display(flex, center, center, column);
+            width: 100%;
+
+            a {
+                @include display(block);
+                text-align: center;
+                width     : 100%;
+                cursor    : pointer;
+                font-size : $--md-ftn;
+                padding   : $--lw-gap;
+                color     : white;
+                transition: background-color 1s ease;
+
+                &:hover {
+                    background-color: $--blue;
+                    color           : white;
+                }
+            }
+        }
+    }
+
+    .show-hamburger-menu {
+        transform     : translate(0%, -50%);
+        pointer-events: all;
+        opacity       : 1;
+        transition    : transform 1s ease, opacity 1s ease;
+
+    }
+
+    .to-top {
+        @include position(fixed, right, bottom, 1%, 2%);
+        background-color: $--blue;
+        border-radius   : $--md-gap;
+        color           : white;
+        cursor          : pointer;
+        height          : 50px;
+        width           : 50px;
+        font-size       : 20px;
+        @include display (flex, center, center);
+        box-shadow: 0px 1px 5px black;
+        z-index   : 300;
+
+        &:hover {
+            animation: heartBeat 1s ease;
+        }
+    }
+
+    .welcome {
+        @include display(flex, center, stretch, column);
+        max-height: 100vh;
+    }
+
+}
+
+@media screen and (min-width:768px) {
+    .container-all .to-top {
+        font-size: 25px;
+        height   : 70px;
+        width    : 70px;
+    }
+
+    button {
+        font-size: 1vw;
+        padding  : $--xlw-gap $--lwMd-gap !important;
+    }
+
+    a {
+        font-size: $--LG-xlw-ftn;
+    }
+
+    h1 {
+        font-size: $--LG-lgmd-ftn;
+
+    }
+
+    h2 {
+        font-size: $--LG-lwMd-ft;
+    }
+
+    h3 {
+        font-size: $--LG-xlw-ftn;
+
+    }
+
+    h4 {
+        font-size: $--LG-lw-ftn;
+    }
+
+    h5 {
+        font-size: $--LG-xxlw-ftn;
+    }
+
+    p {
+
+        font-size: $--LG-xlw-ftn;
+
+    }
+
+
+
+}
+
+@media screen and (min-width:768px) and (max-width:1025px) and (min-height:900px) {
+    button {
+        font-size: $--LG-md-ftn;
+    }
+
+    a {
+        font-size: $--LG-lwMd-ft;
+    }
+
+    h1 {
+        font-size: $--SEPARATORS;
+    }
+
+    h3 {
+        font-size: $--LG-xlg-ftn;
+    }
+
+    h4 {
+        font-size: $--LG-md-ftn;
+    }
+
+    h5 {
+        font-size: $--LG-lw-ftn;
+    }
+
+    p {
+
+        font-size: $--LG-md-ftn;
+
+    }
+}

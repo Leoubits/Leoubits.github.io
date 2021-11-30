@@ -1,0 +1,201 @@
+@import'../variables';
+
+.values {
+    background-color: $--whiteish-transition;
+    @include display (flex, center, center, column);
+    gap       : $--lw-gap;
+    padding   : $--lwMd-gap;
+    margin-top: $--lw-gap;
+
+    .values-titles {
+        @include display (flex, center, center, column);
+        gap          : $--lw-gap;
+        margin-bottom: $--lw-gap;
+        height       : auto;
+
+        h1,
+        h4 {
+            max-width : 100%;
+            text-align: center;
+            margin    : auto;
+        }
+
+        h1 {
+
+            position: relative;
+
+            &::after {
+                @include measure(2px, 100%);
+                @include position(absolute, left, bottom, 0%, 0%);
+                background-color: $-red;
+                content         : '';
+            }
+        }
+
+        h4 {
+            &::after {
+                content: none;
+            }
+        }
+
+        h1 {
+            color: $--dark-blue;
+        }
+    }
+
+    .card-wrapper {
+        @include display (grid, center, center);
+        grid-template-columns: 1fr;
+        grid-auto-rows       : 1fr;
+        margin               : auto;
+        gap                  : $--lw-gap;
+
+        .card {
+            @include display(flex, center, center, column);
+            @include measure ();
+            background-position: center;
+            background-size    : cover;
+            padding            : $--lw-gap;
+            gap                : $--lwMd-gap;
+            border             : 1px solid rgb(194, 194, 194);
+            text-align         : center;
+            border-radius      : $--lw-gap;
+
+            h3 {
+                @include display(flex, center, center);
+                gap           : $--lw-gap;
+                width         : 100%;
+                padding-bottom: $--xlw-gap;
+                position      : relative;
+                padding       : $--lw-gap;
+                font-size     : $--lg-ftn;
+
+                &::after {
+                    @include measure(2px, 100%);
+                    @include position(absolute, left, bottom, 0%, 0%);
+                    background-color: $-red;
+                    content         : '';
+                }
+
+            }
+
+
+            &:nth-child(1) {
+                background-image: url('../media/img/politicas/card-2.jpeg');
+            }
+
+            &:nth-child(3) {
+                background-image: url('../media/img/politicas/card-1.jpeg');
+
+            }
+
+            &:nth-child(4),
+            &:nth-child(8) {
+                background-color: rgb(202, 236, 243);
+                ;
+                transition: background-color 1s ease;
+
+                h3 {
+                    color: black;
+                }
+
+                &:hover {
+                    background-color: rgb(203, 247, 255);
+                }
+            }
+
+            &:nth-child(6),
+            &:nth-child(2) {
+                background-color: $--blue;
+                transition      : background-color 1s ease;
+
+                &:hover {
+                    background-color: rgb(56, 125, 255);
+                }
+
+                h3 {
+                    color: white;
+
+                    img {
+                        filter: invert(1);
+                    }
+
+                }
+
+                p {
+                    color: $--subText-darkbg;
+                }
+            }
+
+            &:nth-child(5) {
+                background-image: url('../media/img/politicas/card-4.jpeg');
+            }
+
+            &:nth-child(7) {
+                background-image: url('../media/img/politicas/card-3.jpeg');
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .values .values-titles h1 {
+        font-size: $--md-ftn;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .values {
+
+        .values-titles {}
+
+        .card-wrapper {
+            display              : grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows       : 1fr;
+            width                : 85%;
+
+            .card {
+                &:nth-child(1) {
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    order: 2;
+                }
+
+                &:nth-child(3) {
+                    order: 4;
+                }
+
+                &:nth-child(4) {
+                    order: 3;
+                }
+
+                &:nth-child(5) {
+                    order: 5;
+                }
+
+                &:nth-child(6) {
+                    order: 6;
+                }
+
+                &:nth-child(7) {
+                    order: 8;
+                }
+
+                &:nth-child(8) {
+                    order: 7;
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 351px) {
+    .values {
+        padding: $--lwMd-gap 0;
+    }
+}

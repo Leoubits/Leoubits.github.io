@@ -1,0 +1,439 @@
+@import './variables';
+
+.header {
+    @include display(flex);
+    flex-direction  : column;
+    width           : 100%;
+    background-color: $--main-bg-black;
+    overflow-x      : hidden;
+
+    h1 {
+        font-family: $--fnt-header;
+    }
+
+    h2 {
+        display    : block;
+        margin     : auto;
+        padding    : $--low-gap;
+        text-align : center;
+        color      : white;
+        font-family: $--fnt-roboto;
+        text-shadow: $--text-shadow-black;
+    }
+
+    h3 {
+        font-family: $--fnt-numans;
+    }
+
+    .nav {
+        @include display(flex, space-between, center);
+        width  : 100%;
+        padding: 1rem 2rem;
+
+        .hamburger {
+            @include display(flex, center, center);
+            filter : invert(1);
+            cursor : pointer;
+            z-index: 3;
+
+
+            img {
+                width : 30px;
+                height: 30px;
+
+            }
+
+        }
+
+        .nav-links {
+            display: none;
+
+        }
+
+        .logo {
+            img {
+                height    : 10%;
+                width     : 60%;
+                object-fit: cover;
+
+            }
+        }
+    }
+
+    .hero-image {
+        @include display (flex);
+        width              : 100%;
+        min-height         : 420px;
+        position           : relative;
+        background-position: center;
+        background-size    : cover;
+        flex-grow          : 1;
+        position           : relative;
+        background-image   : url('./media/img/header/background/1.jpeg');
+        transition         : background-image 1s ease;
+
+        .about-company {
+            @include position (absolute, 100%, 100px, left, top, 50%, 70%);
+            @include display(flex, center, center);
+            transform       : translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+
+
+            h1 {
+                text-align: center;
+                color     : white;
+            }
+        }
+
+        .title-container {
+            @include display(flex, start, center);
+            background-color     : $--main-orange;
+            background-image     : url('./media/img/header/left-bkg.jpeg');
+            background-position  : center;
+            background-size      : cover;
+            background-blend-mode: multiply;
+            @include border(2px, white);
+            width     : 50%;
+            height    : 15%;
+            transform : translateX(-50%);
+            transition: transform 1s ease;
+
+            h1 {
+                color      : white;
+                text-shadow: $--text-shadow-black;
+                margin     : 1rem 2rem;
+                text-align : center;
+                width      : 100%;
+            }
+
+        }
+
+        .translate {
+            transform: translateX(0%);
+        }
+
+
+
+        .title-container-2 {
+            @include display(flex, start, center);
+            background-color: rgba(0, 0, 0, 0.75);
+            background-image: url('./media/img/header/right-bkg.jpg');
+            @include border(2px, white);
+            background-size      : cover;
+            background-position  : center;
+            background-blend-mode: multiply;
+            width                : 50%;
+            height               : 15%;
+            transition           : transform 1s ease;
+            transform            : translateX(50%);
+
+            h1 {
+                margin    : 1rem 2rem;
+                color     : white;
+                text-align: center;
+                width     : 100%;
+            }
+
+        }
+
+        .translate {
+            transform: translateX(0%);
+        }
+
+        .abs-logo {
+            @include position (absolute, 200px, 80px, left, bottom, 50%, -5%);
+            transform: translate(-50%, 5%);
+            @include border(4px, white);
+            z-index: 100;
+
+            img {
+                height         : 100%;
+                width          : 100%;
+                object-position: center;
+                object-fit     : cover;
+            }
+        }
+
+
+    }
+
+
+    .sub-title-container {
+        @include display(flex, center, center);
+        flex-direction: column;
+        flex-grow     : 1;
+        width         : 85%;
+        margin        : 4rem auto;
+        gap           : 1.5rem;
+        margin-bottom : 3rem;
+        text-shadow   : $--text-shadow-black;
+        position      : relative;
+        padding       : $--med-gap;
+        overflow      : hidden;
+        z-index       : 0;
+
+        img {
+            @include position(absolute, 100%, auto, left, top, 50%, 50%);
+            opacity  : 0.3;
+            transform: translate(-50%, -50%);
+            z-index  : -1;
+        }
+
+        .input {
+            @include display (flex, center, center);
+            flex-direction: column;
+            gap           : $--low-gap;
+
+            input {
+                height     : 30px;
+                min-width  : 100%;
+                font-family: $--fnt-numans;
+                font-size  : $--fntSz-h3-index-sm;
+                text-align : center
+            }
+
+            p {
+                color      : $--gray;
+                font-family: $--fnt-numans;
+                text-align : center
+            }
+        }
+
+
+        h3 {
+            @include border(4px, white);
+            font-family: $--fnt-header;
+            font-size  : $--fntSz-h1-sm;
+            font-weight: 700;
+            padding    : 0.5rem;
+            color      : $--main-orange;
+            text-align : center;
+            width      : 90%;
+        }
+
+
+        button {
+            display: block;
+            padding: 0.5rem $--med-gap;
+        }
+
+
+
+        .img-wrapper-second {
+
+            display: none;
+
+            svg {
+                cursor    : pointer;
+                transition: transform 1s ease;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 361px) {
+    .header {
+        h1 {
+            width    : 85%;
+            font-size: 16px;
+        }
+
+        h3 {
+            font-size: 14px;
+        }
+
+        .nav {
+            .logo {
+                img {
+                    height: 40px;
+                    width : 100px;
+
+                }
+            }
+        }
+
+        .hero-image {
+            .abs-logo {
+                @include position (absolute, 120px, 50px, left, bottom, 50%, -5%);
+
+            }
+        }
+
+        .sub-title-container {}
+
+    }
+}
+
+@media screen and (min-height: 1024px) {
+
+    .header {
+        .sub-title-container {
+            @include display(flex, center, center);
+            flex-direction: column;
+
+
+            h3 {
+                width    : 90%;
+                font-size: $--fntSz-header-sm;
+            }
+
+            button {
+
+                @include display(flex, center, center);
+            }
+
+
+            .img-wrapper-second {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .header {
+
+        .nav {
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links-mob {
+                display: none
+            }
+
+            .nav-links {
+
+                @include display(flex, space-around, center);
+                width: 60%;
+
+
+                a {
+                    color          : white;
+                    font-family    : $--fnt-roboto;
+                    text-decoration: none;
+                    position       : relative;
+
+                    &::before {
+                        @include after(200%, 200%, transparent);
+                        @include position (absolute, 200%, 200%, left, top, 50%, 50%);
+                        transform: translate(-50%, -50%);
+
+                    }
+
+                    &::after {
+                        @include after(0%, 3px, $--main-orange);
+                        @include position (absolute, 0%, 3px, left, bottom, 50%, -15%);
+                        transform : translate(-50%);
+                        transition: width 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+
+                    &:hover::after {
+                        @include after(100%, 3px, $--main-orange);
+                    }
+
+
+                }
+
+                .flag {
+                    width   : 100%;
+                    height  : 100%;
+                    overflow: hidden;
+                    @include display(flex, center, center);
+
+                    img {
+                        width     : 25px;
+                        height    : 25px;
+                        object-fit: cover
+                    }
+                }
+            }
+        }
+
+        .hero-image {
+            min-height: 725px;
+
+            .about-company {
+                @include position (absolute, 70%, 100px, left, top, 50%, 70%);
+                @include display(flex, center, center);
+                transform       : translate(-50%, -50%);
+                background-color: rgba(0, 0, 0, 0.5);
+
+            }
+        }
+
+        .sub-title-container {
+            flex           : 1;
+            justify-content: space-between;
+
+            img {
+                @include position(absolute, 100%, auto, left, top, 25%, 25%);
+                transform: translate(-25%, -25%);
+                opacity  : 0.15;
+
+            }
+
+            .input {
+                @include display(flex, center, center);
+                flex-direction: column;
+                gap           : 0.5rem;
+
+                input {
+
+                    font-size: $--fntSz-p-sm;
+                }
+            }
+
+            h3 {
+                width: 80%;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+    .header .nav {
+        .nav-links {
+            width: 40% !important;
+        }
+
+        .logo {
+            height: 80px;
+            width : 200px;
+
+            img {
+                height: 100%;
+                width : 100%;
+            }
+
+        }
+
+
+    }
+
+    .header .sub-title-container {
+        flex-direction: row;
+
+        button {
+            display: none;
+        }
+
+        .img-wrapper-second {
+            @include display(flex, center, center);
+        }
+
+        .input p {
+            font-size: $--LG-xxlw-ftn;
+        }
+
+    }
+
+}

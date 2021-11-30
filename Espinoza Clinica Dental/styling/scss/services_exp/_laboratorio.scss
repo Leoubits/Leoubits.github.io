@@ -1,0 +1,456 @@
+@import '../_variables';
+
+.laboratorio {
+    @include display(flex, center, start, column);
+    gap           : $--lwMd-gap;
+    padding-bottom: $--md-gap;
+
+    .lab-title {
+        @include display (flex, center, center);
+        min-height           : 150px;
+        background-color     : rgb(82, 81, 81);
+        background-image     : url('https://images.pexels.com/photos/1366944/pexels-photo-1366944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        background-blend-mode: multiply;
+        background-position  : center;
+        background-size      : cover;
+        width                : 100%;
+
+        h1 {
+            font-size: $--xlg-ftn !important;
+            color    : white;
+        }
+    }
+
+    .laboratorio-subtitles {
+        height: 100%;
+        width : 85%;
+        margin: auto;
+        @include display (flex, start, center, column);
+        gap     : $--lw-gap;
+        position: relative;
+        height  : auto;
+
+        .img-wrapper {
+            display            : none;
+            width              : 100%;
+            height             : 100%;
+            background-image   : url('../media/img/lab/bk.png');
+            background-position: 40% 20%;
+            background-size    : cover;
+            background-repeat  : no-repeat;
+            margin-right       : auto;
+            border-radius      : $--lw-gap;
+            order              : 2;
+        }
+
+        .info-wrapper {
+            @include display (flex, center, start, column);
+            gap                : $--lw-gap;
+            padding            : $--lwMd-gap;
+            background-color   : white;
+            background-image   : url('../media/img/lab/bk-2.png');
+            background-position: 40% 20%;
+            background-size    : cover;
+            background-repeat  : no-repeat;
+            margin-right       : auto;
+
+            h1 {
+                text-align: start;
+                color     : $--dark-blue;
+                position  : relative;
+                text-align: center;
+                margin    : auto;
+
+                &::after {
+                    @include measure(2px, 30%);
+                    @include position(absolute, left, bottom, 50%, -10%);
+                    background-color: $-red;
+                    content         : '';
+                }
+            }
+
+            p {
+                text-align: center;
+                color     : black;
+            }
+        }
+
+    }
+
+    .slide {
+        @include display(flex, center, center, column);
+        margin: auto;
+        width : 85%;
+
+
+        .slide-titles {
+            width  : 100%;
+            padding: $--md-gap;
+            @include display(flex, center, start, column);
+            gap     : $--xlw-gap;
+            position: relative;
+
+            .item-1 {
+                @include position (absolute, left, top, 8%, 50%);
+                height: 100px;
+                width : 50px;
+            }
+
+            .item-2 {
+                @include position (absolute, right, top, 8%, 50%);
+                height: 100px;
+                width : 50px;
+            }
+
+            h4 {
+                text-align: center;
+
+                &::after {
+                    @include measure(2px, 60%);
+                    @include position(absolute, left, bottom, 50%, -10%);
+                    background-color: $-red;
+                    content         : '';
+                }
+            }
+
+            h1 {
+                color    : $--dark-blue;
+                font-size: $--lg-ftn !important;
+            }
+
+            h1,
+            h4 {
+                margin: auto
+            }
+        }
+
+        .slide-card-wrapper {
+            @include display(grid, center, center);
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            width                : 100%;
+            min-height           : 5rem;
+
+            .slide-card {
+                text-align      : center;
+                height          : 100%;
+                flex            : 1;
+                background-color: $--dark-bg;
+                @include display (flex, center, center, column);
+                cursor    : pointer;
+                transition: background-color 1s ease;
+                position  : relative;
+
+                &::after {
+                    content: '';
+                    width  : 100%;
+                    height : 100%;
+                    @include position (absolute, left, top, 50%, 50%);
+                }
+
+                &:hover {
+                    background-color: $-red;
+                }
+
+                img {
+                    filter: invert(1);
+
+
+                    height: 30px;
+                    width : 30px;
+                }
+
+                h3 {
+
+                    color: white;
+
+                }
+            }
+        }
+    }
+
+    .card-displayed {
+        width : 85%;
+        margin: auto;
+        @include display (flex, center, center, column);
+        gap           : $--lw-gap;
+        padding-bottom: $--lwMd-gap;
+
+        h2 {
+            position: relative;
+
+            &::after {
+                @include measure(2px, 50%);
+                @include position(absolute, left, bottom, 0%, -5%);
+                background-color: $-red;
+                content         : '';
+            }
+        }
+
+        .img-wrapper {
+            width: 100%;
+            @include display(flex, center, center);
+
+            img {
+                width        : 100%;
+                height       : 300px;
+                object-fit   : cover;
+                border-radius: $--lw-gap;
+            }
+        }
+
+        .info-main-wrapper {
+            @include display (flex, center, center, column);
+            width: 100%;
+
+            .info-title {
+                width           : 100%;
+                height          : auto;
+                background-color: $--dark-bg;
+                padding         : $--lw-gap $--lwMd-gap;
+                box-shadow      : 0px 1px 3px rgb(42, 40, 59);
+                z-index         : 10;
+
+                h1 {
+                    color: white;
+                }
+            }
+
+            .info-content {
+                flex   : 1;
+                padding: $--lw-gap $--md-gap;
+                @include display(flex, center, start, column);
+                gap                  : $--lw-gap;
+                background-color     : $--blue;
+                width                : 100%;
+                min-height           : 300px;
+                background-image     : url('../media/img/lab/bk-1.jpg');
+                background-blend-mode: multiply;
+                background-position  : center;
+
+                h2 {
+                    color      : $--dark-blue;
+                    font-weight: 800;
+                }
+
+                .info-wrapper {
+
+
+                    h4 {
+                        color        : white;
+                        font-weight  : 600;
+                        margin-bottom: $--lw-gap;
+
+                        &:nth-child(4) {
+                            padding-top: $--lw-gap;
+                        }
+
+                        &::after {
+                            @include measure(2px, 50%);
+                            @include position(absolute, left, bottom, 0%, 0%);
+                            background-color: $-red;
+                            content         : '';
+                        }
+                    }
+
+                    p {
+                        color      : $--subText-darkbg;
+                        font-weight: 400;
+                        @include display(flex, start, center);
+                        gap: $--xlw-gap;
+
+                        img {
+                            filter: invert(1);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width:850px) {
+    .slide .slide-card-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+        grid-auto-rows       : auto;
+        min-height           : 10rem;
+
+        .slide-card {
+            padding: $--xlw-gap;
+        }
+
+    }
+
+    .laboratorio .card-displayed .info-main-wrapper .info-content .info-wrapper p {
+        font-size: $--LG-lg-ftn;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .laboratorio .slide .slide-card-wrapper .slide-card h3 {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .laboratorio {
+        .lab-card-wrapper {
+            @include display(flex, center, center);
+        }
+
+        .laboratorio-subtitles {
+            height: 350px;
+
+            .img-wrapper {
+                display: block;
+            }
+
+            .info-wrapper {
+                text-align      : center;
+                position        : absolute;
+                top             : 50%;
+                left            : 0%;
+                transform       : translate(0%, -50%);
+                width           : 50%;
+                background-image: none;
+                backdrop-filter : blur(1rem);
+                border-radius   : 0 $--lwMd-gap $--lwMd-gap 0;
+
+                h1 {
+                    margin    : 0 !important;
+                    text-align: start;
+
+                    &::after {
+                        @include position(absolute, left, bottom, 0%, -10%);
+                    }
+
+                }
+
+                p {
+                    text-align: start;
+                }
+            }
+        }
+
+        .slide {
+            .slide-titles {
+                width: 20%;
+            }
+
+            .slide-card-wrapper {
+                width: 80%;
+            }
+        }
+
+    }
+
+    .slide {
+        flex-direction: row !important;
+        margin-top    : $--lwMd-gap !important;
+        gap           : $--lw-gap;
+
+        .slide-titles {
+            width        : auto !important;
+            padding-left : 0 !important;
+            padding-right: $--md-gap !important;
+
+            img {
+                display: none;
+            }
+
+            h1,
+            h4 {
+                margin    : 0 !important;
+                text-align: start !important;
+            }
+
+            h4 {
+
+                &::after {
+                    left: 30% !important;
+                }
+            }
+
+            h1 {
+                padding-top: $--lw-gap;
+            }
+        }
+
+        .slide-card-wrapper {
+            @include display(grid, center, center);
+            grid-template-columns: repeat(6, 1fr);
+            min-height           : 8rem !important;
+
+            .slide-card {
+                gap: $--lw-gap;
+
+                img {
+                    height: 50px !important;
+                    width : 50px !important;
+                }
+
+
+            }
+
+        }
+    }
+
+    .card-displayed {
+        flex-direction: row;
+
+        .img-wrapper {
+            width: 50%;
+
+            img {
+                border-radius: $--lw-gap 0 0 $--lw-gap;
+            }
+        }
+
+        .info-main-wrapper .info-content .info-wrapper {
+
+
+            h4 {
+                padding-bottom: $--lw-gap;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width:576px) {
+
+    .card-displayed .info-main-wrapper,
+    .info-title h1 {
+        font-size: $--lw-ftn !important;
+    }
+
+    .slide .slide-card-wrapper {
+        grid-template-columns: repeat(3, minmax(90px, 1fr)) !important;
+        grid-auto-rows       : auto;
+        min-height           : 10rem;
+
+        .slide-card {
+            padding: $--xlw-gap;
+            gap    : $--xlw-gap !important;
+        }
+    }
+}
+
+@media screen and (max-width:412px) {
+    .laboratorio .slide .slide-titles {
+        .item-1 {
+            left: 2%;
+        }
+
+        .item-2 {
+            right: 2%;
+        }
+    }
+}
+
+@media screen and (max-width:361px) {
+    .laboratorio .slide .slide-titles h1 {
+        font-size: $--md-ftn !important;
+    }
+}

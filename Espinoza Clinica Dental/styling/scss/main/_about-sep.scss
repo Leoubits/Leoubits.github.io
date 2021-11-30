@@ -1,0 +1,164 @@
+@import '../variables';
+
+.about-separator {
+    @include display(flex);
+    padding: $--md-gap $--lwMd-gap;
+    @include measure();
+    gap       : $--lw-gap;
+    margin-top: 10rem;
+
+    .first-rect {
+        width              : 100%;
+        min-height         : 300px;
+        border-radius      : 0 $--lw-gap $--lw-gap 0;
+        background-image   : url("../media/img/about-sep/2.jpeg");
+        background-size    : cover;
+        background-position: center;
+
+        img {
+            display   : none;
+            object-fit: cover;
+            max-height: 100%;
+            max-width : 100%
+        }
+
+    }
+
+    .second-rect {
+        @include display(flex, center, initial, column);
+        gap: 1rem;
+
+        h4 {
+            width         : 30%;
+            padding-bottom: 0;
+
+            &::after {
+                @include measure(2px, 100%);
+                @include position(absolute, left, bottom, 0%, -10%);
+                background-color: $-red;
+                content         : '';
+            }
+        }
+
+        h1 {
+            font-size  : $--md-ftn !important;
+            color      : $--dark-blue;
+            text-shadow: none;
+        }
+
+        p {
+            color       : $--p-color;
+            font-weight : 400;
+            line-height : 1.8;
+            border-left : 2px solid $--blue;
+            padding-left: $--xlw-gap;
+        }
+
+        a {
+
+            @include measure(auto, 60%);
+            background-color: $--blue;
+            border-radius   : $--md-gap;
+            color           : white;
+            cursor          : pointer;
+            padding         : $--xlw-gap $--lw-gap;
+            box-shadow      : 0px 1px 5px black;
+            text-align      : center;
+
+            &:hover {
+                animation: pulse 1s ease;
+            }
+        }
+
+    }
+}
+
+.main-separator {
+    margin-top   : 6rem !important;
+    margin-bottom: $--md-gap !important;
+}
+
+@media screen and (min-width:768px) {
+    .about-separator {
+        gap           : $--md-gap;
+        flex-direction: row;
+        padding       : $--md-gap 0;
+        width         : 80%;
+        margin        : auto;
+        margin-top    : 8rem !important;
+
+        .first-rect {
+            width           : auto !important;
+            background-image: none !important;
+            @include display (flex, center, center);
+            height: 200px;
+
+            img {
+                display      : block;
+                border-radius: 0 $--lw-gap $--lw-gap 0;
+                height       : 550px !important;
+                max-width    : 100%;
+                object-fit   : cover;
+            }
+        }
+
+        .second-rect {
+            gap: $--md-gap;
+
+            h1 {
+                font-size: $--LG-lg-ftn !important;
+            }
+
+            p {
+                padding-left: $--lw-gap;
+            }
+        }
+    }
+
+
+}
+
+@media screen and (min-width:768px) and (max-width:1025px) and (min-height:900px) {
+    .about-separator {
+        flex-direction: column;
+        gap           : $--lwMd-gap;
+
+        .first-rect {
+            height: 15rem;
+
+            img {
+                margin-right: auto;
+            }
+        }
+
+        .second-rect {
+            gap: $--lwMd-gap !important;
+
+            h1 {
+                font-size: $--LG-xlg-ftn !important;
+            }
+        }
+    }
+
+    .main-separator {
+        margin-top: 0 !important;
+
+        .first-rect {
+            background-image   : url('../media/img/about-sep/2.jpeg') !important;
+            background-position: 100% 100%;
+
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .about-separator .second-rect .mentions {
+        @include display (grid, center, center);
+        grid-template-columns: 20% 1fr;
+        grid-template-rows   : repeat(2, 50%);
+    }
+
+}

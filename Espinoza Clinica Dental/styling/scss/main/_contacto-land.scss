@@ -1,0 +1,73 @@
+@import '../variables';
+
+.contacto {
+    @include display (flex, center, center, column);
+    @include measure ();
+    padding: $--md-gap;
+    gap    : $--lwMd-gap;
+    @include measure(auto, 85%);
+    margin: auto;
+
+    img {
+        @include measure(90%, 80%);
+    }
+
+    .contacto-info {
+        @include display (flex, initial, start, column);
+        gap       : $--xlw-gap;
+        text-align: center;
+
+        h1,
+        h4,
+        p,
+        button {
+            margin: auto;
+        }
+
+        h1 {
+            font-size: $--lg-ftn;
+            color    : $--dark-blue;
+        }
+
+        h4 {
+            &::after {
+                @include measure(2px, 100%);
+                @include position(absolute, left, bottom, 0%, -10%);
+                background-color: $-red;
+                content         : '';
+            }
+        }
+
+        p {
+            width: 100%;
+        }
+
+        button {
+            padding   : $--xlw-gap $--xlg-gap;
+            margin-top: $--lw-gap;
+            width     : 100%;
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .contacto {
+        flex-direction: row;
+
+        img {
+            height: 30% !important;
+            width : 40% !important;
+        }
+
+        .contacto-info {
+            button {
+                width: 70% !important;
+            }
+
+        }
+    }
+
+
+
+}

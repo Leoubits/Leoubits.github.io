@@ -1,0 +1,64 @@
+@mixin display ($display, $justify:start, $align:stretch, $fDir:row) {
+
+    display        : $display;
+    justify-content: $justify;
+    align-items    : $align;
+
+    @if($display=='flex') {
+        flex-direction: $fDir;
+    }
+}
+
+@mixin measure($height:100%, $width:100%) {
+    height: $height;
+    width : $width;
+}
+
+@mixin position($position, $X, $Y, $Xpos:50%, $Ypos:50%) {
+    position : $position;
+    #{$X}    : $Xpos;
+    #{$Y}    : $Ypos;
+    transform: translate(-$Xpos, -$Ypos);
+}
+
+// C O L O R
+$-red                  : rgb(255, 60, 30);
+$--blue                : rgb(45, 134, 236);
+$--dark-blue           : rgb(42, 100, 179);
+$--dark-bg             : rgb(46, 46, 46);
+$--p-color             : rgb(97, 97, 97);
+$--whiteish-transition :rgb(247, 247, 247);
+$--subText-darkbg      : rgb(204, 204, 204);
+
+// F O N T   / F A M I L Y
+$--poppins : 'Poppins',
+sans-serif;
+
+// F O N T  / S I Z E S
+$--xlw-ftn  :0.5rem;
+$--lw-ftn   :1rem;
+$--lwmd-ftn :1.2rem;
+$--md-ftn   :1.5rem;
+$--lg-ftn   :2rem;
+$--xlg-ftn  :3rem;
+
+// - L A R G E  S C R E E N S
+$--LG-xxlw-ftn :1vw;
+$--LG-xlw-ftn  :1.2vw;
+$--LG-lw-ftn   :1.5vw;
+$--LG-lwMd-ft  :1.7vw;
+$--LG-md-ftn   :2vw;
+$--LG-lg-ftn   :2.3vw;
+$--LG-lgmd-ftn :2.5vw;
+$--LG-xlg-ftn  :2.8vw;
+$--SEPARATORS  : 4vw;
+$--TAB-TITLES  : 4vw;
+$--BIG-TITLE   :6vw;
+
+// G A P S 
+$--xlw-gap  :0.5rem;
+$--lw-gap   :1rem;
+$--lwMd-gap :1.5rem;
+$--md-gap   :2rem;
+$--lg-gap   :3rem;
+$--xlg-gap  :4rem;

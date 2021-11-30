@@ -1,0 +1,174 @@
+@import '../variables';
+
+.container-all {
+    .welcome {
+        .nav {
+            padding: $--lw-gap $--md-gap;
+
+            .nav-desktop {
+                display: none;
+            }
+
+            .nav-mob {
+                padding: 0;
+                @include display (flex, space-between, center);
+
+                .logo {
+                    @include display (flex, center, center);
+                    @include measure(15%, 25%);
+
+                    img {
+                        max-width      : 100%;
+                        max-height     : 100%;
+                        object-fit     : cover;
+                        object-position: center;
+                    }
+                }
+
+                .hamburger {
+                    @include display (flex, center, center);
+                    cursor    : pointer;
+                    transition: transform 1s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width:1080px) {
+    .container-all .welcome .nav {
+        width : 85%;
+        margin: auto;
+    }
+
+}
+
+
+@media all and (min-width: 768px) {
+
+    .container-all {
+        .welcome {
+            .nav {
+                .nav-mob {
+                    display: none;
+                }
+
+                .nav-desktop {
+                    @include display (flex, space-around, center);
+                    width: 100%;
+                    gap  : $--lw-gap;
+
+                    .logo {
+                        @include display (flex, center, center);
+                        @include measure(10%, 15%);
+
+                        img {
+                            max-width      : 100%;
+                            max-height     : 100%;
+                            object-fit     : cover;
+                            object-position: center;
+                        }
+                    }
+
+                    .nav-links {
+                        @include measure(auto, 45%);
+                        @include display(flex, space-around, center);
+
+                        a {
+                            display : block;
+                            position: relative;
+
+                            &::after {
+                                @include measure(2.5px, 0%);
+                                @include position (absolute, left, bottom, 50%, -10%);
+                                content         : '';
+                                background-color: $-red;
+                                transition      : width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                            }
+
+                            &:hover::after {
+                                @include measure(2px, 100%);
+                            }
+
+                        }
+
+                    }
+
+                    .telefono {
+                        @include display (flex, space-between, center);
+                        @include measure(auto, 15%);
+                        gap        : $--xlw-gap;
+                        margin-left: auto;
+
+                        .phone-logo {
+                            @include display (flex, center, center);
+                            @include measure(100%, 15%);
+
+                            svg {
+                                @include measure();
+                            }
+                        }
+
+                        h5 {
+                            @include measure(auto, 80%);
+                            align-self: center;
+                        }
+
+                    }
+
+                }
+
+                .quick-contact {
+                    button {
+                        @include display (flex, center, center);
+                        gap: $--lw-gap;
+
+                        img {
+                            @include measure(25%, 25%);
+                            filter: invert(1);
+                        }
+                    }
+
+                }
+
+                .about {
+                    .nav-links {
+                        @include measure(auto, 45%);
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width:768px) and (max-width:1025px) and (min-height:900px) {
+    .container-all .nav .nav-desktop .telefono {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .container-all .welcome .nav .nav-mob .logo {
+        @include measure(25%, 35%);
+    }
+}
+
+
+@media screen and (max-height:590px) {
+    .welcome .nav {
+        margin-top: $--lg-gap;
+    }
+}
+
+@media screen and (max-height:569px) {
+    .welcome .nav {
+        margin-top: 0 !important;
+    }
+}

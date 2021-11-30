@@ -1,0 +1,44 @@
+@mixin display ($display:flex, $justify-content:initial, $align-items:initial) {
+    display        : $display;
+    justify-content: $justify-content;
+    align-items    : $align-items;
+}
+
+@mixin selectable {
+    content  : '';
+    position : absolute;
+    width    : 100%;
+    height   : 100%;
+    left     : 50%;
+    top      : 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin Underline {
+    content         : '';
+    position        : absolute;
+    width           : 50%;
+    height          : 5px;
+    left            : 0%;
+    bottom          : -10%;
+    background-color: $GREEN;
+}
+
+// ====== GAPS ====== //
+$XXLW_GAP :0.5rem;
+$XLW_GAP  :1rem;
+$LW_GAP   :1.5rem;
+$LWMD_GAP :2rem;
+$MD_GAP   :2.5rem;
+$LG_GAP   :3rem;
+$XLG_GAP  :4rem;
+$XXLG_GAP :5rem;
+
+// ====== SHADOW ====== //
+$TEXT-SHADOW-LIGHT-DK-BG: 4px 1px 10px rgb(31, 31, 31);
+
+// ====== Colors ====== //
+$ORANGE : rgb(253, 114, 71);
+$GREEN  : rgb(88, 235, 174);
+$BLACK  : rgb(41, 40, 40);
+$GRAY   : rgb(200, 199, 199);

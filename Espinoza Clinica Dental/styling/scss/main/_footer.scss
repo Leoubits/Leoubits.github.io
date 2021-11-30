@@ -1,0 +1,163 @@
+@import '../variables';
+
+.footer {
+    @include display(flex, center, initial, column);
+    background-color: $--dark-bg;
+    padding         : $--md-gap;
+    gap             : $--md-gap;
+    margin          : auto;
+
+    .first-rect {
+        @include display(grid, space-between);
+        grid-template-areas:
+            'main main'
+            'lk1 lk2'
+        ;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows   : repeat(2, 1fr);
+        width                : 100%;
+        margin               : auto;
+        gap                  : $--md-gap $--lw-gap;
+
+        .logo-addr {
+            grid-area: main;
+            @include display (flex, center, initial, column);
+            gap  : $--lw-gap;
+            width: 100%;
+
+            img {
+                @include measure(55px, 200px);
+                border: 2px solid $--blue;
+                margin: auto;
+            }
+
+            h5 {
+
+                color     : $--subText-darkbg;
+                width     : 80%;
+                margin    : auto;
+                text-align: center
+            }
+
+            .social {
+                @include display (flex);
+                gap   : $--xlw-gap;
+                width : 65%;
+                margin: auto;
+
+                img {
+                    border       : none;
+                    border-radius: 100%;
+                    @include measure(30px, 30px);
+                    cursor: pointer;
+
+                    &:hover {
+                        animation: heartBeat 1s ease;
+                    }
+                }
+            }
+        }
+
+        .middle-links {
+            grid-area: lk1;
+            @include display(flex, start, initial, column);
+            border-left : 2px solid $-red;
+            padding-left: $--lw-gap;
+            width       : 100%;
+
+            h2 {
+                color        : white;
+                padding      : 0;
+                margin-bottom: $--lw-gap;
+                position     : relative;
+
+            }
+
+            a {
+                color: $--subText-darkbg;
+            }
+        }
+
+        .explore {
+            grid-area      : lk2;
+            justify-content: space-between;
+            min-height     : 100%;
+        }
+    }
+
+    .second-rect {
+        display       : flex;
+        flex-direction: column;
+        border-top    : 1px solid white;
+        padding       : $--md-gap;
+        padding-bottom: 0;
+        gap           : $--lw-gap;
+
+        h2 {
+            font-size : $--md-ftn;
+            color     : white;
+            text-align: center;
+            position  : relative;
+
+            &::after {
+                @include measure(2px, 30%);
+                @include position(absolute, left, bottom, 50%, -10%);
+                background-color: $-red;
+                content         : '';
+            }
+        }
+
+        h5 {
+            font-size : 0.8rem;
+            color     : $--subText-darkbg;
+            text-align: center;
+        }
+    }
+
+}
+
+@media screen and (min-width:768px) {
+
+    .footer {
+
+
+        .first-rect {
+            @include display(flex, space-between);
+            width : 85%;
+            margin: auto;
+
+            .logo-addr {
+                @include display (flex, center, initial, column);
+                width: 40%;
+
+                img {
+                    margin: 0;
+                }
+
+                h5 {
+                    width     : 80%;
+                    margin    : 0;
+                    text-align: initial
+                }
+
+                .social {
+                    margin: 0;
+                }
+            }
+
+            .middle-links {
+                width: 30%;
+            }
+        }
+
+        .second-rect {
+
+            h5 {
+                font-size: $--lw-ftn;
+
+                text-align: center;
+            }
+        }
+
+    }
+}

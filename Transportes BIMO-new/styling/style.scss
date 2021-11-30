@@ -1,0 +1,480 @@
+* {
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    list-style     : none;
+    outline        : none;
+    border         : none;
+    user-select    : none;
+    scroll-behavior: smooth;
+}
+
+@import './_scss/variables';
+@import './_scss/header';
+@import './_scss/rutas';
+@import './_scss/nosotros';
+@import './_scss/politicas';
+@import './_scss/unidades';
+@import './_scss/contacto';
+
+.boton {
+    font-family     : $--fnt-roboto;
+    font-size       : $--fntSz-h3-index-lg;
+    padding         : 1rem 3rem;
+    border          : 3px solid $--main-blue;
+    background-color: transparent;
+    color           : white;
+    cursor          : pointer;
+    transition      : color 1s ease;
+    position        : relative;
+    overflow        : hidden;
+    z-index         : 0;
+
+
+    &::after {
+        @include after (0px, 200px, $--main-blue);
+        @include position (absolute, 0px, 200px, left, top, 0%, 0%);
+        transition: width 1s ease;
+        z-index   : -1;
+    }
+
+
+
+    &:hover::after {
+        width: 100%;
+
+    }
+
+    &:hover {
+        color: black;
+    }
+}
+
+h1 {
+    font-size  : $--fntSz-h1-sm;
+    font-family: $--fnt-roboto;
+    font-weight: 600;
+}
+
+h2 {
+    font-size  : $--fntSz-h2;
+    font-weight: 500;
+}
+
+p {
+    font-size  : $--fntSz-p-sm;
+    font-family: $--fnt-numans;
+    font-weight: 400;
+}
+
+.container-all {
+    @include display (flex);
+    flex-direction: column;
+
+    .separator {
+        @include display(grid, center, center);
+        grid-template-areas:
+            'img h3 img_2'
+        ;
+        gap                  : 1rem;
+        grid-template-columns: 35% 50% 10%;
+        grid-template-rows   : 100%;
+        background-color     : $--gray;
+        padding              : 3rem;
+        min-height           : 40vh;
+        width                : 100%;
+
+        .img-wrapper {
+            grid-area   : img;
+            justify-self: center;
+            align-self  : center;
+            overflow    : hidden;
+            width       : 100%;
+            height      : 100%;
+            @include display (flex);
+
+            img {
+                margin    : auto;
+                height    : 100%;
+                width     : 100%;
+                object-fit: cover;
+
+
+            }
+        }
+
+        .img-wrapper-second {
+            grid-area: img_2;
+            @include display(flex, center, center);
+            margin: auto;
+
+            img {
+                height    : 100%;
+                width     : 100%;
+                cursor    : pointer;
+                transition: transform 1s ease;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        .separator-text {
+            grid-area: h3;
+            @include display (flex);
+            flex-direction: column;
+
+            h3 {
+                color        : $--main-orange;
+                font-family  : $--fnt-header;
+                font-size    : $--fntSz-h1-lg;
+                width        : 85%;
+                margin       : auto;
+                margin-bottom: 1rem;
+                border-bottom: 2px solid $--main-orange;
+            }
+
+            p {
+
+                align-self : center;
+                font-family: $--fnt-numans;
+                font-size  : $--fntSz-p-sm;
+                line-height: 2;
+                width      : 85%;
+                height     : 100%;
+                margin     : auto;
+
+
+
+            }
+        }
+
+
+
+    }
+}
+
+@media screen and (min-height: 1366px) {
+    .container-all .separator {
+        height: 60vh !important;
+
+        .separator-text {
+            grid-area : h3;
+            text-align: center;
+
+
+            p {
+
+                width: 85%;
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 748px) {
+
+    .container-all {
+        position: relative;
+
+        .nav-links-mob {
+            @include display(flex, center, center);
+            flex-direction: column;
+            @include position (fixed, 100%, 100%, left, top, 0%, 0%);
+            clip-path       : circle(0px at 100% -10%);
+            transition      : clip-path 0.7s ease;
+            background-color: $--main-bg-black;
+            z-index         : 200;
+            width           : 100%;
+
+
+            .nav-links-mob-title {
+                @include display(flex, space-between, center);
+                flex-direction: row;
+                padding       : 2rem;
+                width         : 85%;
+
+                h1 {
+
+                    font-size  : $--fntSz-h1-sm;
+                    font-family: $--fnt-numans;
+                    color      : $--main-orange;
+                    position   : relative;
+
+                    &::after {
+                        @include after(50%, 2px, $--main-blue);
+                        @include position (absolute, 50%, 2px, left, top, 0%, 140%);
+                        transform: translate(-0%, -140%);
+                    }
+
+
+                }
+
+                .x_close {
+                    cursor    : pointer;
+                    transition: transform 1s ease;
+
+                }
+            }
+
+            li {
+                width: 100%;
+
+                &:hover {
+                    background-color: $--main-blue;
+
+                }
+
+                &:hover>a {
+                    color: black;
+
+                }
+
+                &:hover>a>img {
+                    filter: invert(0);
+                }
+
+                a {
+                    @include display (flex, space-between, center);
+                    gap            : 1rem;
+                    width          : 65%;
+                    padding        : $--low-gap;
+                    text-align     : center;
+                    font-family    : $--fnt-numans;
+                    font-size      : $--fntSz-h1-sm;
+                    font-weight    : 200;
+                    color          : white;
+                    text-decoration: none;
+                    margin         : auto;
+
+                    .link-text {
+                        width     : 50%;
+                        text-align: start;
+                    }
+
+                    img {
+                        filter: invert(1);
+                    }
+
+
+                }
+            }
+
+        }
+
+        .ham-open {
+            clip-path: circle(200% at 100% -10%);
+        }
+    }
+
+    .container-all .separator {
+        @include display(grid, center, center);
+        grid-template-areas:
+            'img'
+            'h3 '
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows   : repeat(2, 50%);
+        padding              : 3rem 0;
+
+
+        .img-wrapper {
+            grid-area: img;
+            width    : 85%;
+
+        }
+
+        .img-wrapper-second {
+            display: none;
+        }
+
+        .separator-text {
+            grid-area: h3;
+
+            p {
+
+                width: 85%;
+
+            }
+        }
+
+
+
+    }
+
+}
+
+@media screen and (min-height: 1024px) {
+    .container-all .separator {
+        @include display(grid, center, center);
+        grid-template-areas:
+            'img'
+            'h3 '
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows   : repeat(2, 50%);
+        padding              : 3rem 0;
+        height               : 50vh;
+
+        .img-wrapper {
+            grid-area: img;
+            width    : 85%;
+
+        }
+
+        .separator-text {
+            grid-area : h3;
+            text-align: center;
+
+
+            p {
+                width: 85%;
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 748px) {
+    a {
+        font-size: $--LG-md-ftn;
+    }
+
+    p {
+        font-size: $--LG-md-ftn;
+    }
+
+    h1 {
+        font-size: $--LG-xlg-ftn;
+    }
+
+    h2 {
+        font-size: $--LG-lg-ftn;
+    }
+
+    h3 {
+        font-size: $--LG-lg-ftn;
+    }
+
+    .container-all .nav-links-mob {
+        display: none;
+    }
+
+    .container-all .separator {
+        .separator-text {
+            gap: 1rem;
+
+            h3 {
+                font-size: $--TAB-TITLES;
+            }
+
+            p {
+                font-size: $--LG-lg-ftn;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    a {
+        font-size: $--LG-xlw-ftn;
+    }
+
+    p {
+        font-size: $--LG-xlw-ftn;
+    }
+
+    h1 {
+        font-size: $--LG-lg-ftn;
+    }
+
+    h2 {
+        font-size: $--LG-lw-ftn;
+    }
+
+    h3 {
+        font-size: $--LG-lwMd-ft;
+    }
+
+    .container-all .separator {
+        gap    : 2rem;
+        padding: 3rem auto;
+        height : 70vh;
+
+        .separator-text {
+            gap: 1rem;
+
+            h3 {
+                font-size: $--LG-xlg-ftn;
+            }
+
+            p {
+                font-size: $--LG-xlw-ftn;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .container-all .separator {
+        p {
+            font-size: $--fntSz-h3-index-sm;
+
+        }
+    }
+
+    .container-all {
+        .nav-links-mob {
+            padding        : 2rem 0;
+            justify-content: space-around;
+
+            .nav-links-mob-title {
+                h1 {
+                    font-size : 1.3rem;
+                    text-align: center
+                }
+
+                svg {
+                    @include position (absolute, 15%, 15%, left, top, 75%, 5%);
+
+
+                }
+
+                .move-right {
+                    transform: translate(-75%, -5%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .container-all {
+        .nav-links-mob {
+
+            .nav-links-mob-title {
+
+                svg {
+                    @include position (absolute, 15%, 15%, left, top, 80%, 0%);
+                    transition: animation 1s ease;
+
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 361px) {
+    .container-all .separator .separator-text {
+        h3 {
+            font-size: $--fntSz-h3-lg;
+        }
+
+        p {
+            font-size: $--fntSz-p-sm;
+        }
+    }
+}

@@ -1,0 +1,94 @@
+@mixin display ($display, $justify:start, $align:start) {
+    display        : $display;
+    align-items    : $align;
+    justify-content: $justify;
+
+}
+
+@mixin position($position, $w, $h, $x, $y, $xpos, $ypos) {
+    position: $position;
+    width   : $w;
+    height  : $h;
+    #{$x}   : $xpos;
+    #{$y}   : $ypos;
+}
+
+@mixin after($width, $height, $backgColor, $content:'') {
+    content         : $content;
+    width           : $width;
+    height          : $height;
+    background-color: $backgColor;
+}
+
+@mixin before($width, $height, $backgColor, $content:'') {
+    content         : $content;
+    width           : $width;
+    height          : $height;
+    background-color: $backgColor;
+}
+
+@mixin background_img ($dir, $position:center, $size:cover, $blend:multiply) {
+
+    background-image     : url($dir);
+    background-position  : $position;
+    background-size      : $size;
+    background-blend-mode: $blend;
+}
+
+@mixin border($w, $color:white, $solid:solid) {
+
+    border: $w $solid $color;
+}
+
+//Colors 
+$--main-bg-black: #333;
+$--gray         :rgb(237, 238, 239);
+$--muted-border :rgb(207, 207, 207);
+$--main-orange  : rgb(255, 101, 1);
+$--main-blue    : #B5DAF2;
+$--toast-title  :rgb(209, 84, 0);
+$--toast-bg     :rgb(255, 181, 132);
+$--toast-text   :rgb(221, 90, 3);
+
+//Font-Family
+$--fnt-header : 'Exo',
+sans-serif;
+$--fnt-roboto : 'Roboto',
+sans-serif;
+$--fnt-numans:'Numans',
+sans-serif;
+
+//Font-Size
+$--fntSz-header-lg  : 3.75rem;
+$--s-header         :3rem;
+$--fntSz-header-sm  : 2.25rem;
+$--fntSz-h1-lg      : 1.875rem;
+$--fntSz-h1-sm      : 1.5rem;
+$--fntSz-h3-lg      : 1.5rem;
+$--fntSz-h3-sm      : 1rem;
+$--fntSz-h2         : 1.2rem;
+$--fntSz-h3-index-lg: 1rem;
+$--fntSz-h3-index-sm: 0.75rem;
+$--fntSz-p-sm       : 0.875rem;
+$--fntSz-p-lg       : 1rem;
+$--fntsz-lg-height  :1.25rem;
+
+// - L A R G E  S C R E E N S
+$--LG-xxlw-ftn  :1vw;
+$--LG-xlw-ftn   :1.2vw;
+$--LG-lw-ftn    :1.5vw;
+$--LG-lwMd-ft   :1.7vw;
+$--LG-md-ftn    :2vw;
+$--LG-lg-ftn    :2.3vw;
+$--LG-xlg-ftn   :2.8vw;
+$--footer-titles:3.5vw;
+$--SEPARATORS   : 4vw;
+$--TAB-TITLES   : 5.5vw;
+$--BIG-TITLE    :6vw;
+
+//Shadow
+$--text-shadow-black:1px 1px 3px black;
+
+//Gaps
+$--low-gap:1rem;
+$--med-gap: 2rem;
