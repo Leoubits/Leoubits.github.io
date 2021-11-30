@@ -1667,9 +1667,7 @@ p {
 }
 
 .projects .card-wrapper .card .matro {
-  background-image: url("https://images.unsplash.com/photo-1611042553365-9b101441c135?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9kZWwlMjBnaXJsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-image: url("../images/projects/cards/matro.jpg");
 }
 
 .projects .card-wrapper .card .third {
