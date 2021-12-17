@@ -146,8 +146,9 @@
 @media screen and (min-width:748px) {
     .services {
         margin    : auto;
-        padding   : $--md-gap $--lwMd-gap;
+        padding   : $--xlg-gap $--lwMd-gap;
         text-align: initial;
+        gap       : $--lwMd-gap;
 
         .services-intro {
             flex-direction: row;

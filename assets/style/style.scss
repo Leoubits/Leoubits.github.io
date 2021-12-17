@@ -51,6 +51,58 @@ html {
     @include display(flex);
     flex-direction: column;
     height        : 100%;
+    position      : relative;
+
+    .cv {
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        position        : fixed;
+        width           : 80px;
+        height          : 80px;
+        bottom          : 2%;
+        right           : 1%;
+        font-size       : 20px;
+        z-index         : 100;
+        border-radius   : 100%;
+        overflow        : hidden;
+        padding         : 0;
+        cursor          : pointer;
+        overflow-x      : hidden;
+        background-color: white;
+
+        &:hover {
+            color: white;
+        }
+
+        &:hover::after {
+            left: 50%;
+        }
+
+        &::after {
+            content         : '';
+            width           : 100%;
+            height          : 100%;
+            position        : absolute;
+            top             : 50%;
+            left            : -50%;
+            transform       : translate(-50%, -50%);
+            background-color: $GREEN;
+            z-index         : -1;
+            transition      : left 1s ease;
+        }
+
+        &:hover>img {
+            filter: invert(1);
+        }
+
+        img {
+            height    : 50%;
+            width     : 50%;
+            object-fit: cover;
+            transition: filter 1s ease;
+        }
+    }
 }
 
 img {
@@ -200,6 +252,33 @@ p {
     margin     : 0px;
 }
 
+
+@media screen and (max-width:411px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16x;
+    }
+}
+
 @media screen and (min-width:768px) {
     h1 {
         font-size: 65px;
@@ -230,32 +309,35 @@ p {
     }
 }
 
-@media screen and (max-width:411px) {
+@media screen and (min-width:1280px) {
     h1 {
-        font-size: 30px;
+        font-size: 48px;
     }
 
     h2 {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     h3 {
-        font-size: 22px;
+        font-size: 30px;
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 35px;
     }
 
     h5 {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     h6 {
-        font-size: 16x;
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 18px;
     }
 }
-
 
 /*===========================
       02. HEADER
@@ -431,17 +513,10 @@ p {
         @media screen and (min-width:768px) {
             .nav {
                 padding: $XLW_GAP 0;
-
-                .desktop {
-                    display: flex;
-                }
-
-                .mob-logo {
-                    display: none;
-                }
+                padding: 0 2rem;
 
                 li a {
-                    font-size: 24px
+                    font-size: 20px
                 }
 
                 li img {
@@ -449,10 +524,58 @@ p {
                     width : 50px;
                 }
 
-                .menu {
-                    margin: auto;
+
+            }
+        }
+
+        @media screen AND (min-width:1024px) {
+            .nav {
+
+                .mob-logo {
+                    display: flex;
+                }
+
+                .desktop {
+                    display: flex;
+                }
+
+            }
+
+            .nav .menu {
+                display: none;
+            }
+        }
+
+        @media screen AND (min-width:1366px) {
+            .nav {
+                .mob-logo {
+                    display: none;
+                }
+
+
+            }
+
+            .nav .menu {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width:1444px) {
+            .nav {
+                li a {
+                    font-size: 24px
                 }
             }
+
+        }
+
+        @media screen and (min-width:2450px) {
+            .nav {
+                li a {
+                    font-size: 30px
+                }
+            }
+
         }
 
         /*===========================
@@ -467,7 +590,7 @@ p {
                 display  : none;
                 color    : white;
                 padding  : $MD_GAP;
-                font-size: 68px;
+                font-size: 48px;
             }
         }
 
@@ -479,7 +602,7 @@ p {
             padding: 0;
 
             .f-rect {
-                background-image   : url('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+                background-image   : url('../images/about/skills/bg.jpeg');
                 background-size    : cover;
                 background-position: center;
                 background-repeat  : no-repeat;
@@ -517,9 +640,14 @@ p {
 
 @media screen and (min-width: 1025px) {
 
+
     /*===========================
       02. HEADER- MIN WIDTH : 1025PX
     ===========================*/
+    .container-all .side-menu {
+        display: none;
+    }
+
     .container-all .header {
         .floating-text {
             position : absolute;
@@ -535,17 +663,17 @@ p {
             }
 
             h1 {
-                font-size : 40px;
+                font-size : 34px;
                 text-align: start;
                 width     : 100%;
             }
 
             .name {
-                font-size: 80px;
+                font-size: 58px;
             }
 
             h3 {
-                font-size : 40px;
+                font-size : 34px;
                 text-align: start;
                 width     : 100%;
                 padding   : $XLW_GAP $LW_GAP;
@@ -575,6 +703,47 @@ p {
             width      : 100%;
             grid-column: 6/13;
             grid-row   : 2/13;
+        }
+    }
+}
+
+@media screen and(min-width:1440px) {
+    .container-all .header {
+        .pre-showcase {
+            h1 {
+                font-size: 58px;
+            }
+        }
+
+        .floating-text {
+            position : absolute;
+            left     : 5%;
+            bottom   : 25%;
+            transform: translate(0%, 0%);
+            width    : auto;
+
+            .main-text {
+                @include display(flex,
+                    start,
+                    center);
+            }
+
+            h1 {
+                font-size : 50px;
+                text-align: start;
+                width     : 100%;
+            }
+
+            .name {
+                font-size: 80px;
+            }
+
+            h3 {
+                font-size : 50px;
+                text-align: start;
+                width     : 100%;
+                padding   : $XLW_GAP $LW_GAP;
+            }
         }
     }
 }
@@ -718,8 +887,9 @@ p {
 .about {
     @include display(flex);
     flex-direction  : column;
-    min-height      : 120vh;
     background-color: white;
+    gap             : 2rem;
+    height          : auto;
 
     .about-separator {
         height          : 5%;
@@ -734,9 +904,13 @@ p {
         grid-template-columns: repeat(12, 1fr);
 
         .about-me {
-            grid-column: 1/13;
-            grid-row   : 1/3;
-            padding    : $MD_GAP;
+            grid-column          : 1/13;
+            grid-row             : 1/3;
+            padding              : 2.5rem 0;
+            background-image     : url('../images/about/skills/bg.jpg');
+            background-color     : #333;
+            background-blend-mode: multiply;
+            background-position  : center;
             @include display(flex,
                 center,
                 start);
@@ -746,6 +920,7 @@ p {
             h1 {
                 color: $ORANGE;
             }
+
 
             p {
                 color: $GRAY;
@@ -757,18 +932,18 @@ p {
             grid-row   : 3/13;
             @include display(grid);
             grid-template-columns: repeat(12, 1fr);
-            grid-template-rows   : repeat(12, 1fr);
+            grid-template-rows   : repeat(5, 1fr);
 
             .mini-card {
                 @include display(flex,
                     center,
                     center);
-                padding       : $MD_GAP 0;
-                flex-direction: column;
-                gap           : $MD_GAP;
-                transition    : animation 200ms linear;
+                padding   : $MD_GAP $LW_GAP;
+                gap       : $MD_GAP;
+                transition: animation 200ms linear;
 
                 h3 {
+                    font-size : 20px;
                     color     : white;
                     text-align: center;
                     transform : rotate(-90deg);
@@ -797,53 +972,41 @@ p {
             }
 
             .html {
-                grid-column     : 1/5;
-                grid-row        : 1/7;
+                grid-column     : 1/13;
+                grid-row        : 1/2;
                 background-color: rgb(228, 77, 38);
                 transition      : animation 200ms linear;
 
-                &:hover {
-                    animation: downTransition 200ms forwards;
-                    z-index  : 2;
-                }
+
             }
 
             .css {
-                grid-column     : 1/5;
-                grid-row        : 7/13;
+                grid-column     : 1/13;
+                grid-row        : 2/3;
                 background-color: rgb(55, 154, 214);
 
-                &:hover {
-                    animation: upTransition 200ms forwards;
-                    z-index  : 2;
-                }
+
             }
 
             .scss {
-                grid-column     : 9/13;
-                grid-row        : 1/7;
+                grid-column     : 1/13;
+                grid-row        : 3/4;
                 background-color: rgb(255, 140, 186);
 
-                &:hover {
-                    animation: downTransition 200ms forwards;
-                    z-index  : 2;
-                }
+
             }
 
             .react {
-                grid-column     : 9/13;
-                grid-row        : 7/13;
+                grid-column     : 1/13;
+                grid-row        : 4/5;
                 background-color: rgb(2, 221, 253);
 
-                &:hover {
-                    animation: upTransition 200ms forwards;
-                    z-index  : 2;
-                }
+
             }
 
             .js {
-                grid-column     : 5/9;
-                grid-row        : 1/13;
+                grid-column     : 1/13;
+                grid-row        : 5/6;
                 background-color: rgb(255, 224, 1);
             }
         }
@@ -851,48 +1014,203 @@ p {
 
     .about-me {
         background-color: $BLACK;
+
+        h1 {
+            text-align: center;
+            margin    : auto;
+
+        }
+
+        p {
+            width      : 70%;
+            margin     : auto;
+            text-align : center;
+            font-size  : 18px;
+            font-weight: 400;
+        }
+
+        .wide-p {
+            display: none;
+        }
+
+        .about-info-wrapper {
+            display       : flex;
+            flex-direction: column;
+            height        : auto;
+            width         : 100%;
+            gap           : 3rem;
+
+            .first-rect-info {
+                order         : 3;
+                text-align    : center;
+                display       : flex;
+                flex-direction: column;
+                gap           : 1.5rem;
+
+                .inner-wrapper {
+                    h1 {
+                        font-weight: 600;
+                        font-size  : 20px;
+                        color      : $GREEN;
+                    }
+
+                    h3 {
+                        font-weight: 500;
+                        font-size  : 18px;
+                        color      : rgb(168, 167, 167);
+                    }
+                }
+
+            }
+
+            p {
+                order: 2;
+            }
+
+            .second-rect-info {
+                width          : 100%;
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                order          : 1;
+
+                img {
+                    border-radius: 100%;
+                    border       : 8px solid white;
+                    height       : 200px;
+                    width        : 200px;
+                    object-fit   : cover;
+                }
+            }
+
+            .third-rect-info {
+                order         : 4;
+                text-align    : center;
+                display       : flex;
+                flex-direction: column;
+                gap           : 1.5rem;
+
+                .inner-wrapper {
+                    h1 {
+                        font-weight: 600;
+                        font-size  : 20px;
+                        color      : $GREEN;
+                    }
+
+                    h3 {
+                        font-weight: 500;
+                        font-size  : 18px;
+                        color      : rgb(168, 167, 167);
+                    }
+                }
+
+            }
+        }
     }
 }
 
 @media screen and (min-width:768px) {
+    .about {
+        flex-direction: column;
+    }
+
     .about .about-me {
-        p {
-            width: 85%;
+        padding       : 3rem 0 !important;
+        padding-bottom: 5rem !important;
+
+        h1 {
+            width     : 70%;
+            margin    : auto;
+            text-align: center;
+        }
+
+        .about-info-wrapper {
+            .first-rect-info {
+                justify-content: center;
+                margin         : auto;
+                width          : 80%;
+                flex-direction : row;
+
+                .inner-wrapper {
+                    margin: auto;
+                }
+            }
+
+            .second-rect-info {
+                img {
+                    height: 300px;
+                    width : 300px;
+                }
+            }
+
+            p {
+                order: 1;
+            }
+
+            .third-rect-info {
+                justify-content: space-between;
+                margin         : auto;
+                width          : 50%;
+                flex-direction : row;
+
+                .inner-wrapper {
+
+
+                    h1,
+                    h3 {
+                        text-align: center;
+                        margin    : auto;
+                        width     : auto
+                    }
+                }
+            }
+        }
+
+    }
+
+    .about .about-wrapper .skills {
+
+        .mini-card {
+            @include display(flex,
+                space-between,
+                center);
+            padding       : 2rem 10rem;
+            flex-direction: row;
+            gap           : $XXLG_GAP;
+
+            h3 {
+                font-size: 30px;
+                transform: rotate(0deg);
+            }
         }
     }
 
-    .about .about-wrapper .skills .mini-card {
-        @include display(flex,
-            center,
-            center);
-        gap: $XXLG_GAP;
-
-        h3 {
-            font-size: 36px;
-        }
-    }
 }
 
 @media screen and (min-width:1025px) {
     .about {
         .about-separator {
-            display: block;
+            display: none;
         }
 
         .about-wrapper {
             @include display (grid);
             height               : 100%;
             grid-template-columns: repeat(12, 1fr);
-            grid-template-rows   : 1fr;
+            grid-template-rows   : repeat(12, 1fr);
 
             .about-me {
-                grid-column: 8/13;
-                grid-row   : 1/13;
+                grid-column: 1/13;
+                grid-row   : 1/8;
+
+                p {
+                    width: 60%;
+                }
             }
 
             .skills {
-                grid-column: 1/8;
-                grid-row   : 1/13;
+                grid-column: 1/13;
+                grid-row   : 8/13;
                 @include display(grid);
                 grid-template-columns: repeat(12, 1fr);
                 grid-template-rows   : repeat(12, 1fr);
@@ -903,8 +1221,8 @@ p {
                         center);
 
                     img {
-                        height: 100px;
-                        width : 110px;
+                        height: 150px;
+                        width : 150px;
                     }
 
                     h3 {
@@ -912,56 +1230,42 @@ p {
                     }
 
                     &:hover>img {
-                        height: 150px;
-                        width : 160px;
+                        height: 200px;
+                        width : 210px;
                     }
                 }
 
                 .html {
-                    grid-column     : 1/5;
-                    grid-row        : 1/7;
+                    grid-column     : 1/3;
+                    grid-row        : 1/13;
                     background-color: rgb(228, 77, 38);
                     transition      : animation 200ms linear;
 
-                    &:hover {
-                        animation: downTransition 200ms forwards;
-                        z-index  : 2;
-                    }
                 }
 
                 .css {
-                    grid-column     : 1/5;
-                    grid-row        : 7/13;
+                    grid-column     : 3/5;
+                    grid-row        : 1/13;
                     background-color: rgb(55, 154, 214);
 
-                    &:hover {
-                        animation: upTransition 200ms forwards;
-                    }
+
                 }
 
                 .scss {
-                    grid-column     : 9/13;
-                    grid-row        : 1/7;
+                    grid-column     : 5/7;
+                    grid-row        : 1/13;
                     background-color: rgb(232, 139, 183);
-
-                    &:hover {
-                        animation: downTransition 200ms forwards;
-                        z-index  : 2;
-                    }
                 }
 
                 .react {
-                    grid-column     : 9/13;
-                    grid-row        : 7/13;
+                    grid-column     : 7/9;
+                    grid-row        : 1/13;
                     background-color: rgb(2, 221, 253);
 
-                    &:hover {
-                        animation: upTransition 200ms forwards;
-                    }
                 }
 
                 .js {
-                    grid-column     : 5/9;
+                    grid-column     : 9/13;
                     grid-row        : 1/13;
                     background-color: rgb(255, 224, 1);
                 }
@@ -970,9 +1274,71 @@ p {
     }
 }
 
+@media screen and (min-width:1280px) {
+    .about {
+        gap: 2rem;
+
+
+    }
+
+    .about .about-wrapper {
+        .about-me {
+            gap: 3rem;
+
+            .mob-p {
+                display: none;
+            }
+
+            .wide-p {
+                display: block;
+                width  : 55%;
+            }
+
+            .about-info-wrapper {
+                flex-direction: row;
+                width         : 85%;
+                margin        : auto;
+                gap           : 1.5rem;
+
+                .first-rect-info {
+                    order         : 1;
+                    flex-direction: column;
+                    flex          : 1;
+                }
+
+                .second-rect-info {
+                    order         : 2;
+                    flex-direction: column;
+                    flex          : 1;
+                }
+
+                .third-rect-info {
+                    flex-direction: column;
+                    flex          : 1;
+                }
+            }
+        }
+
+        .skills {
+            .mini-card {
+                padding       : 0;
+                flex-direction: column;
+            }
+        }
+    }
+
+
+}
+
+@media screen and (min-width:1444px) {
+    .about .about-wrapper .about-me .about-info-wrapper {
+        width: 50%;
+    }
+}
+
 @media screen and (max-height: 700px) and (min-width:1000px) {
     .about {
-        min-height: 100vh;
+
 
         .about-wrapper .skills .mini-card {
             h3 {
@@ -1006,23 +1372,6 @@ p {
     }
 }
 
-@media screen and (max-width:411px) {
-    .about {
-        min-height: 100vh;
-    }
-}
-
-@media screen and (max-width:375px) {
-    .about {
-        min-height: 140vh;
-    }
-}
-
-@media screen and (max-width:375px) and (min-height:768px) {
-    .about {
-        min-height: 100vh;
-    }
-}
 
 @keyframes downTransition {
     10% {
@@ -1129,154 +1478,175 @@ p {
      04.OTHER SKILLS
 ===========================*/
 
-.other-skills {
-    @include display(flex,
-        center,
-        center);
-    flex-direction: column;
-    padding       : $MD_GAP;
-    gap           : $LW_GAP;
-    flex          : 1;
 
-    h4 {
-        color: $GRAY
+.extra-skills {
+    display       : flex;
+    flex-direction: column;
+    width         : 100%;
+    height        : auto;
+    padding       : 2rem 0rem;
+
+
+    .card-title {
+        display        : flex;
+        flex           : 1.2;
+        justify-content: center;
+        align-items    : center;
+        padding        : 4rem 0rem;
+        background     : linear-gradient(80deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.1));
+        border-radius  : 2rem;
+
+        h1 {
+            font-size    : 30px;
+            border-bottom: 10px solid green;
+        }
     }
 
-    .skill-logos {
-        @include display(flex,
-            space-around,
-            center);
-        gap   : $MD_GAP;
-        width : 80%;
-        margin: auto;
+    .card-wrapper {
+        display              : grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-rows   : 350px;
+        justify-content      : center;
+        align-items          : center;
+        flex                 : 1;
 
-        img {
-            filter: grayscale(1);
+        .card {
+            display        : flex;
+            flex           : 1;
+            flex-direction : column;
+            justify-content: center;
+            align-items    : center;
+            padding        : 4rem 2rem;
+            gap            : 1rem;
+            box-shadow     : 4px 4px 8px rgb(128, 128, 128);
+
+            h1 {
+                background-color: transparent;
+                font-size       : 36px;
+                color           : white;
+            }
+
+            img {
+                background-color: transparent;
+                height          : 80px;
+                width           : 80px;
+                margin          : auto
+            }
+
+
         }
 
+
         :nth-child(1) {
-            height: 50px;
-            width : 50px;
+            background-color: #007FFF;
+            display         : flex;
+            flex-direction  : column;
         }
 
         :nth-child(2) {
-            height: 50px;
-            width : 40px;
-        }
+            background-color: #333;
 
-        :nth-child(3) {
-            height: 50px;
-            width : 50px;
+            img {
+
+                height: 80px;
+                width : 60px;
+            }
         }
 
         :nth-child(4) {
-            height: 50px;
-            width : 40px;
+            background-color: #333;
+
+            img {
+
+                height: 80px;
+                width : 60px;
+            }
+        }
+
+        :nth-child(3) {
+            background-color: #007FFF;
+
+            img {
+
+                height: 80px;
+                width : 130px;
+            }
         }
     }
 }
 
 @media screen and (min-width:768px) {
-    .other-skills {
-        gap    : $LG_GAP;
-        padding: $LG_GAP;
+    .extra-skills {
+        padding: 2rem;
+    }
+}
 
-        .skill-logos {
-            flex-direction: row;
-            width         : 60%;
+@media screen and (min-width:1268px) {
+    .extra-skills {
+        gap: 2rem;
 
-            img {
-                filter: grayscale(1);
+        .card-wrapper {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-rows   : 250px;
+
+            .card {
+                img {
+                    height: 50px;
+                    width : 40px;
+                }
+
+
+                h1 {
+                    font-size: 24px;
+                }
             }
 
             :nth-child(1) {
-                height: 80px;
-                width : 80px;
-            }
-
-            :nth-child(2) {
-                height: 80px;
-                width : 60px;
+                img {
+                    width: 50px;
+                }
             }
 
             :nth-child(3) {
-                height: 80px;
-                width : 80px;
-            }
-
-            :nth-child(4) {
-                height: 80px;
-                width : 60px;
+                img {
+                    width: 80px;
+                }
             }
         }
     }
 }
 
-@media screen and (max-height: 700px) and (min-width:1000px) {
-    .other-skills {
-        padding: $MD_GAP;
+@media screen and (min-width:1440px) {
+    .extra-skills {
 
-        h4 {
-            font-size: 30px;
-        }
+        .card-wrapper {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-rows   : 350px;
 
-        .skill-logos {
-            :nth-child(1) {
-                height: 55px;
-                width : 55px;
+            .card {
+                img {
+                    height: 60px;
+                    width : 50px;
+                }
+
+
+                h1 {
+                    font-size: 24px;
+                }
             }
 
-            :nth-child(2) {
-                height: 55px;
-                width : 40px;
+            :nth-child(1) {
+                img {
+                    width: 70px;
+                }
             }
 
             :nth-child(3) {
-                height: 55px;
-                width : 55px;
-            }
-
-            :nth-child(4) {
-                height: 55px;
-                width : 40px;
+                img {
+                    width: 100px;
+                }
             }
         }
-    }
-}
-
-@media screen and (max-height:568px) and (min-width:450px) and (max-width:1024px) {
-    .other-skills {
-        margin-top    : $XXLG_GAP;
-        padding-bottom: $LW_GAP;
-
-        .skill-logos {
-            :nth-child(1) {
-                height: 55px;
-                width : 55px;
-            }
-
-            :nth-child(2) {
-                height: 55px;
-                width : 40px;
-            }
-
-            :nth-child(3) {
-                height: 55px;
-                width : 55px;
-            }
-
-            :nth-child(4) {
-                height: 55px;
-                width : 40px;
-            }
-        }
-    }
-}
-
-@media screen and (max-height:568px) and (min-width:768px) and (max-width:1024px) {
-    .other-skills {
-        margin-top    : 12rem;
-        padding-bottom: $LW_GAP;
     }
 }
 
@@ -1514,7 +1884,7 @@ p {
             width: 80%;
 
             .title h3 {
-                font-size: 54px;
+                font-size: 36px;
             }
 
             .names {
@@ -1642,6 +2012,12 @@ p {
             grid-auto-rows       : 1fr;
             width                : 85%;
         }
+    }
+}
+
+@media screen and (min-width:1444px) {
+    .projects p {
+        width: 70%;
     }
 }
 

@@ -384,7 +384,7 @@
     padding: 2rem 0;
     width: 80%;
     margin: auto;
-    margin-top: 8rem !important;
+    margin-top: 11rem !important;
   }
   .about-separator .first-rect {
     width: auto !important;
@@ -713,8 +713,9 @@
 @media screen and (min-width: 748px) {
   .services {
     margin: auto;
-    padding: 2rem 1.5rem;
+    padding: 4rem 1.5rem;
     text-align: initial;
+    gap: 1.5rem;
   }
   .services .services-intro {
     -webkit-box-orient: horizontal;
